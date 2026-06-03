@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Rain Keyframe and Animation */
+@keyframes rain {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+.animate-rain-1 {
+  animation: rain 2s infinite linear;
+}
+
+.animate-rain-2 {
+  animation: rain 2.5s infinite linear;
+}
+
+.animate-rain-3 {
+  animation: rain 1.8s infinite linear;
+}
+
+.animate-rain-4 {
+  animation: rain 2.2s infinite linear;
+}
+
+/* Base custom font selection if needed */
+html {
+  scroll-behavior: smooth;
+}
