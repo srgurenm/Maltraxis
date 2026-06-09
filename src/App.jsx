@@ -229,7 +229,7 @@ export default function App() {
 
             <div className="group rounded-2xl overflow-hidden bg-black/40 border border-white/5 hover:border-indigo-500/30 transition-all shadow-xl">
               <div className="aspect-[4/3] overflow-hidden relative">
-                <img src="./public/azhar.jpeg" alt="Azhar" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/azhar.jpeg" alt="Azhar" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030206] via-transparent to-transparent"></div>
               </div>
               <div className="p-6">
@@ -302,7 +302,7 @@ export default function App() {
             {/* Book 1 */}
             <div className="bg-black/60 rounded-2xl p-6 border border-white/5 hover:border-purple-500/20 transition-all flex flex-col sm:flex-row gap-6">
               <a href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6" target="_blank" rel="noopener noreferrer" className="w-full sm:w-1/3 aspect-[2/3] overflow-hidden rounded-lg relative block">
-                <img src="./public/portada.jpg" alt="Libro 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <img src="/portada.jpg" alt="Libro 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </a>
               <div className="flex-1 flex flex-col justify-between">
                 <div>
