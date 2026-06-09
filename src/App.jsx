@@ -8,6 +8,13 @@ export default function App() {
 
   const [selectedMagic, setSelectedMagic] = useState(null);
   const [selectedLore, setSelectedLore] = useState(false);
+  const [selectedGallery, setSelectedGallery] = useState(false);
+
+  const galleryImages = [
+    { src: '/Paladin.png', alt: 'Paladín' },
+    { src: '/Dualidad.png', alt: 'Dualidad' },
+    { src: '/ecuacion.png', alt: 'Ecuación' }
+  ];
 
   const loreData = {
     title: "EL CÓDICE DE NOCTARA",
@@ -140,6 +147,7 @@ export default function App() {
                 <a href="#mundo" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>El Mundo</a>
                 <a href="#magia" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Magia</a>
                 <button onClick={() => setSelectedLore(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Códice</button>
+                <button onClick={() => setSelectedGallery(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Galería</button>
                 <a href="#libros" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Saga</a>
                 <a href="#autor" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Autor</a>
               </div>
@@ -169,6 +177,7 @@ export default function App() {
             <a href="#mundo" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">El Mundo</a>
             <a href="#magia" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Magia</a>
             <button onClick={() => { setSelectedLore(true); setIsMenuOpen(false); }} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Códice</button>
+            <button onClick={() => { setSelectedGallery(true); setIsMenuOpen(false); }} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Galería</button>
             <a href="#libros" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Saga</a>
             <a href="#autor" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Autor</a>
           </div>
@@ -347,16 +356,20 @@ export default function App() {
         </div>
       )}
 
-      {/* LORE MODAL */}
-      {selectedLore && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedLore(false)}>
-          <div className="bg-[#0c0a09] border border-white/10 p-8 rounded-2xl max-w-2xl w-full shadow-2xl relative max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-            <button onClick={() => setSelectedLore(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white">
+      {/* GALLERY MODAL */}
+      {selectedGallery && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedGallery(false)}>
+          <div className="bg-[#0c0a09] border border-white/10 p-8 rounded-2xl max-w-4xl w-full shadow-2xl relative max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setSelectedGallery(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white">
               <X />
             </button>
-            <h3 className="text-3xl font-bold text-white mb-6 font-serif">{loreData.title}</h3>
-            <div className="text-slate-300 leading-relaxed text-lg">
-              {loreData.content}
+            <h3 className="text-3xl font-bold text-white mb-6 font-serif">Galería Conceptual</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {galleryImages.map((img, index) => (
+                <div key={index} className="rounded-lg overflow-hidden border border-white/10">
+                  <img src={img.src} alt={img.alt} className="w-full h-auto" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
