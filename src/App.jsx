@@ -6,6 +6,39 @@ export default function App() {
   const [resonance, setResonance] = useState('umbrío');
   const [activeRune, setActiveRune] = useState(null);
 
+  const [selectedMagic, setSelectedMagic] = useState(null);
+
+  const magicLore = [
+    {
+      id: 'elemental',
+      title: 'Magia Elemental',
+      shortDesc: 'Manipulación física del entorno mediante el Flujo Telúrico.',
+      fullDesc: 'A diferencia de la Luz o la Oscuridad, la magia elemental no crea materia desde el vacío, sino que manipula el entorno. Requiere concentración constante. Incluye Fuego (requiere combustible), Tierra (manipulación de materiales existentes), Agua/Hielo (depende de la humedad), Viento (efecto de presión) y Electricidad (requiere conductores o runas). Los rangos de élite pueden invocar rayos directamente de las nubes.',
+      color: 'border-cyan-500/30'
+    },
+    {
+      id: 'luz',
+      title: 'Magia de Luz',
+      shortDesc: 'Energía de pureza, orden y constructos sólidos.',
+      fullDesc: 'Vinculada a la pureza y vida. Permite solidificar energía para armas o barreras (drenaje agresivo), ralentizar la percepción, acelerar objetos, y el "Cántico", una frecuencia telepática que fuerza la sumisión dogmática absoluta.',
+      color: 'border-amber-500/30'
+    },
+    {
+      id: 'oscuridad',
+      title: 'Magia de Oscuridad',
+      shortDesc: 'Energía caótica del vacío y emociones primarias.',
+      fullDesc: 'Caos ligado al vacío. Permite alterar la gravedad (aumentar masa), crear fracturas espaciales (teletransportación peligrosa), proyectar ilusiones basadas en traumas (con "rebote" físico al mago), y manipular fuego negro o electricidad púrpura.',
+      color: 'border-purple-500/30'
+    },
+    {
+      id: 'infraestructura',
+      title: 'Infraestructura',
+      shortDesc: 'Gemas como baterías y Runas como código.',
+      fullDesc: 'Las gemas actúan como baterías de energía telúrica (según pureza). Las runas son la sintaxis grabada que permite automatizar efectos mágicos de forma permanente (iluminación, transporte), siempre que cuenten con suministro energético.',
+      color: 'border-white/20'
+    }
+  ];
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const runesLore = [
@@ -254,45 +287,42 @@ export default function App() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">El Ecosistema Mágico de Noctara</h2>
             <p className="text-slate-400 max-w-3xl mx-auto text-justify">
-              Toda la magia en Noctara emana del Flujo Telúrico, la energía natural del núcleo del planeta. Los magos actúan como conductos biológicos; realizar magia sin anclarse al flujo o sin el combustible de una gema agota la vitalidad del usuario, pudiendo causar la muerte.
+              Toda la magia en Noctara emana del Flujo Telúrico, la energía natural del núcleo del planeta. Haz clic en cada tipo de magia para explorar sus mecánicas y limitaciones.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Elemental */}
-            <div className="bg-black/40 p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all">
-              <h3 className="text-xl font-bold text-cyan-400 mb-4 font-serif">Magia Elemental</h3>
-              <p className="text-sm text-slate-400 leading-relaxed text-justify">
-                Manipulación física del entorno (Fuego, Tierra, Agua, Viento, Electricidad). Requiere concentración constante y, a menudo, elementos preexistentes. La electricidad es base de la tecno-magia.
-              </p>
-            </div>
-            
-            {/* Luz */}
-            <div className="bg-black/40 p-6 rounded-2xl border border-white/5 hover:border-amber-500/30 transition-all">
-              <h3 className="text-xl font-bold text-amber-400 mb-4 font-serif">Magia de Luz</h3>
-              <p className="text-sm text-slate-400 leading-relaxed text-justify">
-                Energía de pureza y orden. Permite crear constructos sólidos, acelerar objetos, ralentizar la percepción y el "Cántico", una frecuencia telepática de sumisión dogmática.
-              </p>
-            </div>
-
-            {/* Oscuridad */}
-            <div className="bg-black/40 p-6 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all">
-              <h3 className="text-xl font-bold text-purple-400 mb-4 font-serif">Magia de Oscuridad</h3>
-              <p className="text-sm text-slate-400 leading-relaxed text-justify">
-                Energía caótica del vacío. Incluye alteración gravitatoria, teletransportación mediante fracturas espaciales, y proyección de ilusiones basadas en traumas.
-              </p>
-            </div>
-
-            {/* Infraestructura */}
-            <div className="bg-black/40 p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
-              <h3 className="text-xl font-bold text-white mb-4 font-serif">Infraestructura</h3>
-              <p className="text-sm text-slate-400 leading-relaxed text-justify">
-                Gemas y Runas: Las gemas actúan como baterías de energía telúrica y las runas como el código sintáctico que permite automatizar y hacer permanentes los efectos mágicos.
-              </p>
-            </div>
+            {magicLore.map((item) => (
+              <div
+                key={item.id}
+                onClick={() => setSelectedMagic(item)}
+                className={`bg-black/40 p-6 rounded-2xl border ${item.color} cursor-pointer hover:bg-black/60 transition-all transform hover:-translate-y-1`}
+              >
+                <h3 className="text-xl font-bold text-white mb-4 font-serif">{item.title}</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-justify">
+                  {item.shortDesc}
+                </p>
+                <span className="text-xs text-purple-400 mt-4 inline-block font-bold">Leer más...</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* MAGIC MODAL */}
+      {selectedMagic && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedMagic(null)}>
+          <div className="bg-[#0c0a09] border border-white/10 p-8 rounded-2xl max-w-2xl w-full shadow-2xl relative" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setSelectedMagic(null)} className="absolute top-4 right-4 text-slate-400 hover:text-white">
+              <X />
+            </button>
+            <h3 className="text-3xl font-bold text-white mb-4 font-serif">{selectedMagic.title}</h3>
+            <p className="text-slate-300 leading-relaxed text-justify text-lg">
+              {selectedMagic.fullDesc}
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* NOVELS SAGA SECTION */}
       <section id="libros" className="py-24 relative bg-[#060402]/90 border-t border-white/5">
