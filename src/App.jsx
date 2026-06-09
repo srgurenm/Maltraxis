@@ -64,18 +64,18 @@ export default function App() {
 
   return (
     <div className={`min-h-screen transition-all duration-1000 font-sans selection:bg-red-900 selection:text-white ${resonance === 'umbrío'
-      ? 'bg-[#030206] text-red-100'
-      : 'bg-[#060402] text-amber-100'
+      ? 'bg-[#030206] text-slate-200'
+      : 'bg-white text-slate-900'
       }`}>
 
       {/* RAIN EFFECT */}
-      <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden opacity-30">
+      <div className={`fixed inset-0 pointer-events-none z-10 overflow-hidden ${resonance === 'umbrío' ? 'opacity-30' : 'opacity-10'}`}>
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.05)_50%,rgba(255,255,255,0)_100%)] bg-[size:100px_400px] animate-[pulse_3s_infinite]"></div>
         <div className="rain-container absolute inset-0">
-          <div className="absolute w-[1px] h-20 bg-gradient-to-b from-transparent to-red-900/30 left-[12%] top-[-10%] animate-rain-3"></div>
-          <div className="absolute w-[1px] h-24 bg-gradient-to-b from-transparent to-amber-500/20 left-[35%] top-[-20%] animate-rain-2"></div>
-          <div className="absolute w-[1px] h-16 bg-gradient-to-b from-transparent to-cyan-500/25 left-[67%] top-[-5%] animate-rain-1"></div>
-          <div className="absolute w-[1px] h-28 bg-gradient-to-b from-transparent to-red-900/30 left-[85%] top-[-15%] animate-rain-4"></div>
+          <div className={`absolute w-[1px] h-20 bg-gradient-to-b from-transparent ${resonance === 'umbrío' ? 'to-red-900/30' : 'to-slate-400/30'} left-[12%] top-[-10%] animate-rain-3`}></div>
+          <div className={`absolute w-[1px] h-24 bg-gradient-to-b from-transparent ${resonance === 'umbrío' ? 'to-amber-500/20' : 'to-slate-400/20'} left-[35%] top-[-20%] animate-rain-2`}></div>
+          <div className={`absolute w-[1px] h-16 bg-gradient-to-b from-transparent ${resonance === 'umbrío' ? 'to-cyan-500/25' : 'to-slate-400/25'} left-[67%] top-[-5%] animate-rain-1`}></div>
+          <div className={`absolute w-[1px] h-28 bg-gradient-to-b from-transparent ${resonance === 'umbrío' ? 'to-red-900/30' : 'to-slate-400/30'} left-[85%] top-[-15%] animate-rain-4`}></div>
         </div>
       </div>
 
@@ -105,22 +105,22 @@ export default function App() {
       </div>
 
       {/* NAVIGATION */}
-      <nav className="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/5">
+      <nav className={`fixed w-full z-50 ${resonance === 'umbrío' ? 'bg-black/90' : 'bg-white/90'} backdrop-blur-md border-b ${resonance === 'umbrío' ? 'border-white/5' : 'border-slate-200'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-2">
-              <Sparkles className={`w-6 h-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-red-700' : 'text-amber-500'}`} />
-              <span className="text-2xl font-serif font-bold text-white tracking-wider uppercase">MALTRAXIS</span>
+              <Sparkles className={`w-6 h-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-red-700' : 'text-red-900'}`} />
+              <span className={`text-2xl font-serif font-bold ${resonance === 'umbrío' ? 'text-white' : 'text-slate-900'} tracking-wider uppercase`}>MALTRAXIS</span>
             </div>
 
             <div className="hidden md:flex items-center gap-6">
               <div className="flex items-baseline space-x-8">
-                <a href="#inicio" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
-                <a href="#sinopsis" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">La Historia</a>
-                <a href="#mundo" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">El Mundo</a>
-                <a href="#magia" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Magia</a>
-                <a href="#libros" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Saga</a>
-                <a href="#autor" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Autor</a>
+                <a href="#inicio" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Inicio</a>
+                <a href="#sinopsis" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>La Historia</a>
+                <a href="#mundo" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>El Mundo</a>
+                <a href="#magia" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Magia</a>
+                <a href="#libros" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Saga</a>
+                <a href="#autor" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Autor</a>
               </div>
               <a
                 href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6"
@@ -330,7 +330,7 @@ export default function App() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">La Saga Maltraxis</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              Sumérgete en la crónica de Abyloria a través de las novelas de la saga.
+              Sumérgete en el mundo de Abyloria a través de las novelas de la saga.
             </p>
           </div>
 
@@ -397,7 +397,7 @@ export default function App() {
                 Jose C. Sierra es un apasionado escritor de fantasía oscura y steampunk. Inspirado por la mitología clásica, la tecnología retrofuturista y la narrativa noir, ha construido el universo de Maltraxis como un reflejo de las luchas internas del ser humano bajo la opresión de sistemas implacables.
               </p>
               <div className="flex justify-center md:justify-start gap-4">
-                <a href="mailto:jose.sierra@example.com" className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
+                <a href="mailto:jcsierrah77@gmail.com" className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
                   <Mail className="w-4 h-4" /> Contacto
                 </a>
               </div>
