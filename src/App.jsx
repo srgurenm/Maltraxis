@@ -9,12 +9,16 @@ export default function App() {
   const [selectedMagic, setSelectedMagic] = useState(null);
   const [selectedLore, setSelectedLore] = useState(false);
   const [selectedGallery, setSelectedGallery] = useState(false);
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
   const galleryImages = [
     { src: '/Paladin.png', alt: 'Paladín' },
     { src: '/Dualidad.png', alt: 'Dualidad' },
     { src: '/ecuacion.png', alt: 'Ecuación' }
   ];
+
+  const nextImage = () => setCurrentGalleryIndex((prev) => (prev + 1) % galleryImages.length);
+  const prevImage = () => setCurrentGalleryIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
 
   const loreData = {
     title: "EL CÓDICE DE NOCTARA",
@@ -359,18 +363,26 @@ export default function App() {
       {/* GALLERY MODAL */}
       {selectedGallery && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedGallery(false)}>
-          <div className="bg-[#0c0a09] border border-white/10 p-8 rounded-2xl max-w-4xl w-full shadow-2xl relative max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-            <button onClick={() => setSelectedGallery(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white">
+          <div className="bg-[#0c0a09] border border-white/10 p-4 sm:p-8 rounded-2xl max-w-3xl w-full shadow-2xl relative" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setSelectedGallery(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
               <X />
             </button>
-            <h3 className="text-3xl font-bold text-white mb-6 font-serif">Galería Conceptual</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {galleryImages.map((img, index) => (
-                <div key={index} className="rounded-lg overflow-hidden border border-white/10">
-                  <img src={img.src} alt={img.alt} className="w-full h-auto" />
-                </div>
-              ))}
+            <h3 className="text-2xl font-bold text-white mb-6 font-serif text-center">Galería Conceptual</h3>
+            
+            <div className="relative flex items-center justify-center">
+              <button onClick={prevImage} className="absolute left-0 bg-black/50 p-2 rounded-full text-white hover:bg-red-900 transition-colors">
+                <ChevronRight className="w-6 h-6 rotate-180" />
+              </button>
+              
+              <div className="w-full h-auto overflow-hidden rounded-lg border border-white/10">
+                <img src={galleryImages[currentGalleryIndex].src} alt={galleryImages[currentGalleryIndex].alt} className="w-full h-auto" />
+              </div>
+
+              <button onClick={nextImage} className="absolute right-0 bg-black/50 p-2 rounded-full text-white hover:bg-red-900 transition-colors">
+                <ChevronRight className="w-6 h-6" />
+              </button>
             </div>
+            <p className="text-center text-slate-400 mt-4 font-serif">{galleryImages[currentGalleryIndex].alt}</p>
           </div>
         </div>
       )}
