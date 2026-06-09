@@ -133,12 +133,13 @@ export default function App() {
               <span className={`text-2xl font-serif font-bold ${resonance === 'umbrío' ? 'text-white' : 'text-slate-900'} tracking-wider uppercase`}>MALTRAXIS</span>
             </div>
 
-            <div className="hidden md:flex items-center gap-6">
+              <div className="hidden md:flex items-center gap-6">
               <div className="flex items-baseline space-x-8">
                 <a href="#inicio" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Inicio</a>
                 <a href="#sinopsis" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>La Historia</a>
                 <a href="#mundo" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>El Mundo</a>
                 <a href="#magia" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Magia</a>
+                <button onClick={() => setSelectedLore(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Códice</button>
                 <a href="#libros" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Saga</a>
                 <a href="#autor" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Autor</a>
               </div>
@@ -167,6 +168,7 @@ export default function App() {
             <a href="#sinopsis" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">La Historia</a>
             <a href="#mundo" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">El Mundo</a>
             <a href="#magia" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Magia</a>
+            <button onClick={() => { setSelectedLore(true); setIsMenuOpen(false); }} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Códice</button>
             <a href="#libros" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Saga</a>
             <a href="#autor" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Autor</a>
           </div>
@@ -195,10 +197,10 @@ export default function App() {
                 Acompaña a Gur, un detective cínico con un pasado doloroso, y a Rabe, una joven que representa una paradoja viviente entre la luz y la sombra, en una huida desesperada por los Jardines del Cielo y los callejones del Desagüe.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button onClick={() => setSelectedLore(true)} className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
+                <a href="/capitulos_gratis.pdf" target="_blank" rel="noopener noreferrer" className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
                   <Book className="w-5 h-5" />
-                  Leer Ahora
-                </button>
+                  Leer Ahora (Capítulos Gratis)
+                </a>
               </div>
             </div>
 
