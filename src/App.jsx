@@ -28,7 +28,7 @@ export default function App() {
       title: 'Magia de Oscuridad',
       shortDesc: 'Energía caótica del vacío y emociones primarias.',
       fullDesc: 'Caos ligado al vacío. Permite alterar la gravedad (aumentar masa), crear fracturas espaciales (teletransportación peligrosa), proyectar ilusiones basadas en traumas (con "rebote" físico al mago), y manipular fuego negro o electricidad púrpura.',
-      color: 'border-purple-500/30'
+      color: 'border-red-900/50'
     },
     {
       id: 'infraestructura',
@@ -63,8 +63,8 @@ export default function App() {
   ];
 
   return (
-    <div className={`min-h-screen transition-all duration-1000 font-sans selection:bg-purple-500 selection:text-white ${resonance === 'umbrío'
-      ? 'bg-[#030206] text-purple-100'
+    <div className={`min-h-screen transition-all duration-1000 font-sans selection:bg-red-900 selection:text-white ${resonance === 'umbrío'
+      ? 'bg-[#030206] text-red-100'
       : 'bg-[#060402] text-amber-100'
       }`}>
 
@@ -72,10 +72,10 @@ export default function App() {
       <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden opacity-30">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.05)_50%,rgba(255,255,255,0)_100%)] bg-[size:100px_400px] animate-[pulse_3s_infinite]"></div>
         <div className="rain-container absolute inset-0">
-          <div className="absolute w-[1px] h-20 bg-gradient-to-b from-transparent to-purple-500/30 left-[12%] top-[-10%] animate-rain-3"></div>
+          <div className="absolute w-[1px] h-20 bg-gradient-to-b from-transparent to-red-900/30 left-[12%] top-[-10%] animate-rain-3"></div>
           <div className="absolute w-[1px] h-24 bg-gradient-to-b from-transparent to-amber-500/20 left-[35%] top-[-20%] animate-rain-2"></div>
           <div className="absolute w-[1px] h-16 bg-gradient-to-b from-transparent to-cyan-500/25 left-[67%] top-[-5%] animate-rain-1"></div>
-          <div className="absolute w-[1px] h-28 bg-gradient-to-b from-transparent to-purple-500/30 left-[85%] top-[-15%] animate-rain-4"></div>
+          <div className="absolute w-[1px] h-28 bg-gradient-to-b from-transparent to-red-900/30 left-[85%] top-[-15%] animate-rain-4"></div>
         </div>
       </div>
 
@@ -86,7 +86,7 @@ export default function App() {
           <button
             onClick={() => setResonance('umbrío')}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${resonance === 'umbrío'
-              ? 'bg-purple-900/60 text-purple-200 border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.4)]'
+              ? 'bg-red-950/60 text-red-200 border border-red-900/50 shadow-[0_0_15px_rgba(153,27,27,0.4)]'
               : 'text-slate-400 hover:text-white'
               }`}
           >
@@ -109,24 +109,24 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-2">
-              <Sparkles className={`w-6 h-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-purple-500' : 'text-amber-500'}`} />
+              <Sparkles className={`w-6 h-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-red-700' : 'text-amber-500'}`} />
               <span className="text-2xl font-serif font-bold text-white tracking-wider uppercase">MALTRAXIS</span>
             </div>
 
             <div className="hidden md:flex items-center gap-6">
               <div className="flex items-baseline space-x-8">
-                <a href="#inicio" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
-                <a href="#sinopsis" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">La Historia</a>
-                <a href="#mundo" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">El Mundo</a>
-                <a href="#magia" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Magia</a>
-                <a href="#libros" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Saga</a>
-                <a href="#autor" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Autor</a>
+                <a href="#inicio" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                <a href="#sinopsis" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">La Historia</a>
+                <a href="#mundo" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">El Mundo</a>
+                <a href="#magia" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Magia</a>
+                <a href="#libros" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Saga</a>
+                <a href="#autor" className="hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Autor</a>
               </div>
               <a
                 href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold transition-all shadow-[0_0_10px_rgba(147,51,234,0.3)]"
+                className="px-4 py-2 rounded-lg bg-red-900 hover:bg-red-800 text-white text-sm font-bold transition-all shadow-[0_0_10px_rgba(153,27,27,0.3)]"
               >
                 Comprar Libro
               </a>
@@ -165,7 +165,7 @@ export default function App() {
                 <Star className="w-4 h-4 text-purple-500" /> Nueve luces para nueve sombras
               </div>
               <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-wide">
-                Bienvenido a <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-purple-300 via-purple-500 to-indigo-600' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
+                Bienvenido a <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
               </h1>
               <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
                 Bajo el asfalto mojado del planeta Noctara, el destino de la humanidad se forja con runas, gemas y sangre.
@@ -174,7 +174,7 @@ export default function App() {
                 Acompaña a Gur, un detective cínico con un pasado doloroso, y a Rabe, una joven que representa una paradoja viviente entre la luz y la sombra, en una huida desesperada por los Jardines del Cielo y los callejones del Desagüe.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#libros" className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-purple-600 hover:bg-purple-500 text-white shadow-[0_0_25px_rgba(147,51,234,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
+                <a href="#libros" className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
                   <BookOpen className="w-5 h-5" />
                   Descubrir la Saga
                 </a>
@@ -336,13 +336,13 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Book 1 */}
-            <div className="bg-black/60 rounded-2xl p-6 border border-white/5 hover:border-purple-500/20 transition-all flex flex-col sm:flex-row gap-6">
+            <div className="bg-black/60 rounded-2xl p-6 border border-white/5 hover:border-red-900/20 transition-all flex flex-col sm:flex-row gap-6">
               <a href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6" target="_blank" rel="noopener noreferrer" className="w-full sm:w-1/3 aspect-[2/3] overflow-hidden rounded-lg relative block">
                 <img src="/portada.jpg" alt="Libro 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </a>
               <div className="flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-purple-400 font-bold">Volumen I</span>
+                  <span className="text-[10px] uppercase tracking-wider text-red-700 font-bold">Volumen I</span>
                   <h3 className="text-2xl font-serif font-bold text-white mt-1 mb-3">La Ciudad de las Sombras</h3>
                   <p className="text-sm text-slate-400 leading-relaxed">
                     La introducción al mundo de Noctara. Acompaña a Gur en su misión suicida para liberar a Rabe de la Torre Anael y desatar una verdad que cambiará el destino de los mortales.
@@ -352,7 +352,7 @@ export default function App() {
                   href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase tracking-wider bg-purple-600 hover:bg-purple-500 text-white transition-all duration-300 shadow-[0_0_15px_rgba(147,51,234,0.3)]"
+                  className="mt-6 inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase tracking-wider bg-red-900 hover:bg-red-800 text-white transition-all duration-300 shadow-[0_0_15px_rgba(153,27,27,0.3)]"
                 >
                   <BookOpen className="w-4 h-4" />
                   Comprar en Amazon
@@ -391,7 +391,7 @@ export default function App() {
               <img src="/yo.jpg" alt="Jose C. Sierra" className="w-full h-full object-cover" />
             </div>
             <div className="text-center md:text-left">
-              <span className="text-xs uppercase tracking-widest text-purple-400 font-bold">El Creador</span>
+              <span className="text-xs uppercase tracking-widest text-red-700 font-bold">El Creador</span>
               <h2 className="text-4xl font-serif font-bold text-white mt-1 mb-4">Jose C. Sierra</h2>
               <p className="text-slate-300 leading-relaxed mb-6">
                 Jose C. Sierra es un apasionado escritor de fantasía oscura y steampunk. Inspirado por la mitología clásica, la tecnología retrofuturista y la narrativa noir, ha construido el universo de Maltraxis como un reflejo de las luchas internas del ser humano bajo la opresión de sistemas implacables.
