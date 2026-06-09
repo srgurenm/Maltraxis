@@ -429,7 +429,7 @@ export default function App() {
             {/* Book 2 */}
             <div className="bg-black/60 rounded-2xl p-6 border border-white/5 hover:border-amber-500/20 transition-all flex flex-col sm:flex-row gap-6">
               <div className="w-full sm:w-1/3 aspect-[2/3] overflow-hidden rounded-lg relative">
-                <img src="./public/portada2.png" alt="Libro 2" className="w-full h-full object-cover" />
+                <img src="/portada2.png" alt="Libro 2" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 flex flex-col justify-between">
                 <div>
