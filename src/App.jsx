@@ -161,8 +161,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-purple-400 text-sm font-medium mb-6">
-                <Star className="w-4 h-4 text-purple-500" /> Nueve luces para nueve sombras
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-red-500 text-sm font-medium mb-6">
+                <Star className="w-4 h-4 text-red-700" /> Nueve luces para nueve sombras
               </div>
               <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-wide">
                 Bienvenido a <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
@@ -197,7 +197,7 @@ export default function App() {
       {/* SYNOPSIS */}
       <section id="sinopsis" className="py-20 bg-black/90 border-y border-white/5 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <Feather className={`w-12 h-12 mx-auto mb-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-purple-500' : 'text-amber-500'}`} />
+          <Feather className={`w-12 h-12 mx-auto mb-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-red-700' : 'text-amber-500'}`} />
           <h2 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-8 tracking-wider">La Ciudad de las Sombras</h2>
           <div className="space-y-6 text-slate-300 leading-relaxed text-justify lg:text-center text-lg">
             <p>
@@ -302,7 +302,7 @@ export default function App() {
                 <p className="text-sm text-slate-400 leading-relaxed text-justify">
                   {item.shortDesc}
                 </p>
-                <span className="text-xs text-purple-400 mt-4 inline-block font-bold">Leer más...</span>
+                <span className="text-xs text-red-700 mt-4 inline-block font-bold">Leer más...</span>
               </div>
             ))}
           </div>
