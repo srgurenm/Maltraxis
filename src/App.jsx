@@ -371,12 +371,12 @@ export default function App() {
               <X />
             </button>
             <h3 className="text-2xl font-bold text-white mb-6 font-serif text-center">Galería Conceptual</h3>
-            
+
             <div className="relative flex items-center justify-center">
               <button onClick={prevImage} className="absolute left-0 bg-black/50 p-2 rounded-full text-white hover:bg-red-900 transition-colors">
                 <ChevronRight className="w-6 h-6 rotate-180" />
               </button>
-              
+
               <div className="w-full h-auto overflow-hidden rounded-lg border border-white/10">
                 <img src={galleryImages[currentGalleryIndex].src} alt={galleryImages[currentGalleryIndex].alt} className="w-full h-auto" />
               </div>
@@ -429,7 +429,7 @@ export default function App() {
             {/* Book 2 */}
             <div className="bg-black/60 rounded-2xl p-6 border border-white/5 hover:border-amber-500/20 transition-all flex flex-col sm:flex-row gap-6">
               <div className="w-full sm:w-1/3 aspect-[2/3] overflow-hidden rounded-lg relative">
-                <img src="./public/El Juicio del Alba.jpg" alt="Libro 2" className="w-full h-full object-cover" />
+                <img src="./public/portada2.png" alt="Libro 2" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 flex flex-col justify-between">
                 <div>
