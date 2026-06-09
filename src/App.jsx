@@ -144,31 +144,34 @@ export default function App() {
               <span className={`text-2xl font-serif font-bold ${resonance === 'umbrío' ? 'text-white' : 'text-slate-900'} tracking-wider uppercase`}>MALTRAXIS</span>
             </div>
 
+            <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-6">
-              <div className="flex items-baseline space-x-8">
-                <a href="#inicio" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Inicio</a>
-                <a href="#sinopsis" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>La Historia</a>
-                <a href="#mundo" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>El Mundo</a>
-                <a href="#magia" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Magia</a>
-                <button onClick={() => setSelectedLore(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Códice</button>
-                <button onClick={() => setSelectedGallery(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Galería</button>
-                <a href="#libros" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Saga</a>
-                <a href="#autor" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Autor</a>
+                <div className="flex items-baseline space-x-8">
+                  <a href="#inicio" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Inicio</a>
+                  <a href="#sinopsis" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>La Historia</a>
+                  <a href="#mundo" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>El Mundo</a>
+                  <a href="#magia" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Magia</a>
+                  <button onClick={() => setSelectedLore(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Códice</button>
+                  <button onClick={() => setSelectedGallery(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Galería</button>
+                  <a href="#libros" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Saga</a>
+                  <a href="#autor" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Autor</a>
+                </div>
               </div>
+
               <a
                 href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-lg bg-red-900 hover:bg-red-800 text-white text-sm font-bold transition-all shadow-[0_0_10px_rgba(153,27,27,0.3)]"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-red-900 hover:bg-red-800 text-white text-xs sm:text-sm font-bold transition-all shadow-[0_0_10px_rgba(153,27,27,0.3)]"
               >
-                Comprar Libro
+                Comprar
               </a>
-            </div>
 
-            <div className="md:hidden">
-              <button onClick={toggleMenu} className="text-gray-400 hover:text-white p-2">
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
+              <div className="md:hidden">
+                <button onClick={toggleMenu} className="text-gray-400 hover:text-white p-2">
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </div>
             </div>
           </div>
         </div>
