@@ -7,37 +7,26 @@ export default function App() {
   const [activeRune, setActiveRune] = useState(null);
 
   const [selectedMagic, setSelectedMagic] = useState(null);
+  const [selectedLore, setSelectedLore] = useState(false);
 
-  const magicLore = [
-    {
-      id: 'elemental',
-      title: 'Magia Elemental',
-      shortDesc: 'Manipulación física del entorno mediante el Flujo Telúrico.',
-      fullDesc: 'A diferencia de la Luz o la Oscuridad, la magia elemental no crea materia desde el vacío, sino que manipula el entorno. Requiere concentración constante. Incluye Fuego (requiere combustible), Tierra (manipulación de materiales existentes), Agua/Hielo (depende de la humedad), Viento (efecto de presión) y Electricidad (requiere conductores o runas). Los rangos de élite pueden invocar rayos directamente de las nubes.',
-      color: 'border-cyan-500/30'
-    },
-    {
-      id: 'luz',
-      title: 'Magia de Luz',
-      shortDesc: 'Energía de pureza, orden y constructos sólidos.',
-      fullDesc: 'Vinculada a la pureza y vida. Permite solidificar energía para armas o barreras (drenaje agresivo), ralentizar la percepción, acelerar objetos, y el "Cántico", una frecuencia telepática que fuerza la sumisión dogmática absoluta.',
-      color: 'border-amber-500/30'
-    },
-    {
-      id: 'oscuridad',
-      title: 'Magia de Oscuridad',
-      shortDesc: 'Energía caótica del vacío y emociones primarias.',
-      fullDesc: 'Caos ligado al vacío. Permite alterar la gravedad (aumentar masa), crear fracturas espaciales (teletransportación peligrosa), proyectar ilusiones basadas en traumas (con "rebote" físico al mago), y manipular fuego negro o electricidad púrpura.',
-      color: 'border-red-900/50'
-    },
-    {
-      id: 'infraestructura',
-      title: 'Infraestructura',
-      shortDesc: 'Gemas como baterías y Runas como código.',
-      fullDesc: 'Las gemas actúan como baterías de energía telúrica (según pureza). Las runas son la sintaxis grabada que permite automatizar efectos mágicos de forma permanente (iluminación, transporte), siempre que cuenten con suministro energético.',
-      color: 'border-white/20'
-    }
-  ];
+  const loreData = {
+    title: "EL CÓDICE DE NOCTARA",
+    content: (
+      <div className="space-y-4 text-justify">
+        <p>Bienvenido a la enciclopedia prohibida. Lo que leerás a continuación son verdades ocultas tras siglos de dogma y acero.</p>
+        <h4 className="font-bold text-red-700">1. El Origen: La Fragmentación Divina</h4>
+        <p>En los albores de la historia, la conciencia pura que los humanos llamaron "Dios" descendió sobre el planeta Noctara. Fascinada por la chispa de la vida mortal, esta entidad tomó una decisión que cambiaría el cosmos: se fragmentó. De esa ruptura nacieron dieciocho esencias fundamentales: Las Nueve Luces (Ángeles) y Las Nueve Sombras (Demonios). Aunque el mandato original era preservar el equilibrio, la paz se quebró en el Año 0 con la llamada Traición Angelical, un conflicto donde la sangre divina tiñó la tierra por primera vez y los Ángeles juraron abandonar el mundo físico, llevándose consigo la esperanza de la humanidad.</p>
+        <h4 className="font-bold text-red-700">2. Geografía de la Dualidad</h4>
+        <p>El mundo quedó dividido entre dos bastiones: <strong>Azahr</strong> (La Ciudad Bendita, un paraíso de cristal inmaculado, actualmente sellada) y <strong>Maltraxis</strong> (La Ciudad de las Sombras, una megalópolis gótico-industrial de 40 millones de almas, jungla de rascacielos y neón donde la lluvia nunca cesa).</p>
+        <h4 className="font-bold text-red-700">3. El Sistema Arcano: Leyes de Noctara</h4>
+        <p>La magia es una ciencia de intercambio equivalente. Los magos actúan como <strong>conductos biológicos</strong> para la energía telúrica del planeta. Canalizar poder sin el anclaje de gemas consume la propia vitalidad del mago. Las gemas son baterías, y las runas son la sintaxis o "código" escrito que permite automatizar efectos mágicos.</p>
+        <h4 className="font-bold text-red-700">4. Reliquias de Leyenda</h4>
+        <p>Objetos de inmenso poder: La Espada de los Juramentos, capaz de herir a lo inmortal; El Cántico de los Ángeles, una frecuencia telepática que erradica el libre albedrío; y El Filo del Vacío, una hoja experimental capaz de cortar cualquier materia.</p>
+        <h4 className="font-bold text-red-700">5. Los Jugadores en la Sombra</h4>
+        <p>Los <strong>Demonios Mayores</strong> controlan la industria y la educación mágica en Maltraxis. Los <strong>Seguidores de la Luz</strong>, humanos sin magia leales a los antiguos Ángeles, persisten en las sombras tras la caída de Azahr.</p>
+      </div>
+    )
+  };
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -167,6 +156,7 @@ export default function App() {
               <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-wide">
                 Bienvenido a <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
               </h1>
+              <p className="text-xl text-slate-300 mb-8 font-serif italic">"Donde la lluvia nunca cesa, el poder se paga con el alma y el regreso de la Luz es el inicio del fin"</p>
               <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
                 Bajo el asfalto mojado del planeta Noctara, el destino de la humanidad se forja con runas, gemas y sangre.
                 Bienvenido a Maltraxis, una megalópolis gótico-industrial donde los rascacielos de acero y cristal arcano perforan un cielo de nubes ácidas.
@@ -174,10 +164,10 @@ export default function App() {
                 Acompaña a Gur, un detective cínico con un pasado doloroso, y a Rabe, una joven que representa una paradoja viviente entre la luz y la sombra, en una huida desesperada por los Jardines del Cielo y los callejones del Desagüe.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#libros" className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
-                  <BookOpen className="w-5 h-5" />
-                  Descubrir la Saga
-                </a>
+                <button onClick={() => setSelectedLore(true)} className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
+                  <Book className="w-5 h-5" />
+                  Leer Ahora
+                </button>
               </div>
             </div>
 
@@ -324,6 +314,21 @@ export default function App() {
         </div>
       )}
 
+      {/* LORE MODAL */}
+      {selectedLore && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedLore(false)}>
+          <div className="bg-[#0c0a09] border border-white/10 p-8 rounded-2xl max-w-2xl w-full shadow-2xl relative max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setSelectedLore(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white">
+              <X />
+            </button>
+            <h3 className="text-3xl font-bold text-white mb-6 font-serif">{loreData.title}</h3>
+            <div className="text-slate-300 leading-relaxed text-lg">
+              {loreData.content}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* NOVELS SAGA SECTION */}
       <section id="libros" className="py-24 relative bg-[#060402]/90 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -394,7 +399,7 @@ export default function App() {
               <span className="text-xs uppercase tracking-widest text-red-700 font-bold">El Creador</span>
               <h2 className="text-4xl font-serif font-bold text-white mt-1 mb-4">Jose C. Sierra</h2>
               <p className="text-slate-300 leading-relaxed mb-6">
-                Jose C. Sierra es un apasionado escritor de fantasía oscura y steampunk. Inspirado por la mitología clásica, la tecnología retrofuturista y la narrativa noir, ha construido el universo de Maltraxis como un reflejo de las luchas internas del ser humano bajo la opresión de sistemas implacables.
+                Jose C. Sierra es un apasionado escritor de fantasía. Inspirado por la mitología clásica, la tecnología retrofuturista y la narrativa noir, ha construido el universo de Maltraxis como un reflejo de las luchas internas del ser humano bajo la opresión de sistemas implacables.
               </p>
               <div className="flex justify-center md:justify-start gap-4">
                 <a href="mailto:jcsierrah77@gmail.com" className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
