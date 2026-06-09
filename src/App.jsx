@@ -85,7 +85,7 @@ export default function App() {
                 <a href="#inicio" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
                 <a href="#sinopsis" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">La Historia</a>
                 <a href="#mundo" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">El Mundo</a>
-                <a href="#runas" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Runas</a>
+                <a href="#magia" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Magia</a>
                 <a href="#libros" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Saga</a>
                 <a href="#autor" className="hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Autor</a>
               </div>
@@ -113,7 +113,7 @@ export default function App() {
             <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Inicio</a>
             <a href="#sinopsis" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">La Historia</a>
             <a href="#mundo" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">El Mundo</a>
-            <a href="#runas" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Runas</a>
+            <a href="#magia" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Magia</a>
             <a href="#libros" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Saga</a>
             <a href="#autor" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Autor</a>
           </div>
@@ -210,7 +210,7 @@ export default function App() {
                   <h3 className="text-xl font-bold text-white font-serif">Jardines del Cielo</h3>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Islas flotantes de piedra blanca y arboledas de cristal que emiten destellos dorados. El refugio inalcanzable de las viejas familias y los templos luminosos.
+                  Los Jardines del Cielo de Maltraxis son exuberantes oasis de naturaleza artificial que se extienden entre los pisos 100 y 125 de los rascacielos colosales de la ciudad, funcionando como un segundo nivel urbano suspendido en las alturas. Estas islas celestiales están interconectadas por puentes y plataformas grabados con runas de estabilización azules que brillan suavemente.
                 </p>
               </div>
             </div>
@@ -240,7 +240,7 @@ export default function App() {
                   <h3 className="text-xl font-bold text-white font-serif">Azhar: La Ciudad de la Luz</h3>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Contrapunto luminoso a Maltraxis. Azhar se erige como un faro de tecnología pura y energía solar, donde la luz no solo ilumina, sino que dicta el orden y la justicia sobre los dominios telúricos.
+                  Contrapunto luminoso a Maltraxis. Azhar se erige como un faro de luz  y esperanza, donde la luz no solo ilumina, sino que dicta el orden y la justicia sobre los dominios telúricos.
                 </p>
               </div>
             </div>
@@ -248,45 +248,48 @@ export default function App() {
         </div>
       </section>
 
-      {/* RUNES OF NOCTARA SECTION */}
-      <section id="runas" className="py-24 relative bg-black/80 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* MAGIC SYSTEM */}
+      <section id="magia" className="py-24 relative bg-black/80 border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">Runas de Noctara</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Selecciona una runa para canalizar su energía y comprender su resonancia con el flujo telúrico.
+            <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">El Ecosistema Mágico de Noctara</h2>
+            <p className="text-slate-400 max-w-3xl mx-auto text-justify">
+              Toda la magia en Noctara emana del Flujo Telúrico, la energía natural del núcleo del planeta. Los magos actúan como conductos biológicos; realizar magia sin anclarse al flujo o sin el combustible de una gema agota la vitalidad del usuario, pudiendo causar la muerte.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {runesLore.map((rune) => (
-              <div
-                key={rune.id}
-                onClick={() => setActiveRune(rune.id === activeRune ? null : rune.id)}
-                className={`cursor-pointer p-8 rounded-2xl border transition-all duration-500 relative overflow-hidden group ${activeRune === rune.id
-                  ? `${rune.color} border-current scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.05)]`
-                  : 'border-white/5 bg-white/[0.02] hover:border-white/10 hover:bg-white/[0.05]'
-                  }`}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-2xl">
-                    {rune.id === 'luz' && <Flame className="w-8 h-8 text-amber-400" />}
-                    {rune.id === 'vacio' && <Droplet className="w-8 h-8 text-purple-400" />}
-                    {rune.id === 'elemental' && <Sparkles className="w-8 h-8 text-cyan-400" />}
-                  </span>
-                  <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${activeRune === rune.id ? 'rotate-90' : ''}`} />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2 font-serif">{rune.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                  {rune.desc}
-                </p>
-                {activeRune === rune.id && (
-                  <div className="mt-4 pt-4 border-t border-white/10 text-xs tracking-wider uppercase text-slate-300">
-                    Energía canalizada exitosamente.
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Elemental */}
+            <div className="bg-black/40 p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all">
+              <h3 className="text-xl font-bold text-cyan-400 mb-4 font-serif">Magia Elemental</h3>
+              <p className="text-sm text-slate-400 leading-relaxed text-justify">
+                Manipulación física del entorno (Fuego, Tierra, Agua, Viento, Electricidad). Requiere concentración constante y, a menudo, elementos preexistentes. La electricidad es base de la tecno-magia.
+              </p>
+            </div>
+            
+            {/* Luz */}
+            <div className="bg-black/40 p-6 rounded-2xl border border-white/5 hover:border-amber-500/30 transition-all">
+              <h3 className="text-xl font-bold text-amber-400 mb-4 font-serif">Magia de Luz</h3>
+              <p className="text-sm text-slate-400 leading-relaxed text-justify">
+                Energía de pureza y orden. Permite crear constructos sólidos, acelerar objetos, ralentizar la percepción y el "Cántico", una frecuencia telepática de sumisión dogmática.
+              </p>
+            </div>
+
+            {/* Oscuridad */}
+            <div className="bg-black/40 p-6 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all">
+              <h3 className="text-xl font-bold text-purple-400 mb-4 font-serif">Magia de Oscuridad</h3>
+              <p className="text-sm text-slate-400 leading-relaxed text-justify">
+                Energía caótica del vacío. Incluye alteración gravitatoria, teletransportación mediante fracturas espaciales, y proyección de ilusiones basadas en traumas.
+              </p>
+            </div>
+
+            {/* Infraestructura */}
+            <div className="bg-black/40 p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
+              <h3 className="text-xl font-bold text-white mb-4 font-serif">Infraestructura</h3>
+              <p className="text-sm text-slate-400 leading-relaxed text-justify">
+                Gemas y Runas: Las gemas actúan como baterías de energía telúrica y las runas como el código sintáctico que permite automatizar y hacer permanentes los efectos mágicos.
+              </p>
+            </div>
           </div>
         </div>
       </section>
