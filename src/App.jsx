@@ -28,6 +28,37 @@ export default function App() {
     )
   };
 
+  const magicLore = [
+    {
+      id: 'elemental',
+      title: 'Magia Elemental',
+      shortDesc: 'Manipulación física del entorno mediante el Flujo Telúrico.',
+      fullDesc: 'A diferencia de la Luz o la Oscuridad, la magia elemental no crea materia desde el vacío, sino que manipula el entorno. Requiere concentración constante. Incluye Fuego (requiere combustible), Tierra (manipulación de materiales existentes), Agua/Hielo (depende de la humedad), Viento (efecto de presión) y Electricidad (requiere conductores o runas). Los rangos de élite pueden invocar rayos directamente de las nubes.',
+      color: 'border-cyan-500/30'
+    },
+    {
+      id: 'luz',
+      title: 'Magia de Luz',
+      shortDesc: 'Energía de pureza, orden y constructos sólidos.',
+      fullDesc: 'Vinculada a la pureza y vida. Permite solidificar energía para armas o barreras (drenaje agresivo), ralentizar la percepción, acelerar objetos, y el "Cántico", una frecuencia telepática que fuerza la sumisión dogmática absoluta.',
+      color: 'border-amber-500/30'
+    },
+    {
+      id: 'oscuridad',
+      title: 'Magia de Oscuridad',
+      shortDesc: 'Energía caótica del vacío y emociones primarias.',
+      fullDesc: 'Caos ligado al vacío. Permite alterar la gravedad (aumentar masa), crear fracturas espaciales (teletransportación peligrosa), proyectar ilusiones basadas en traumas (con "rebote" físico al mago), y manipular fuego negro o electricidad púrpura.',
+      color: 'border-red-900/50'
+    },
+    {
+      id: 'infraestructura',
+      title: 'Infraestructura',
+      shortDesc: 'Gemas como baterías y Runas como código.',
+      fullDesc: 'Las gemas actúan como baterías de energía telúrica (según pureza). Las runas son la sintaxis grabada que permite automatizar efectos mágicos de forma permanente (iluminación, transporte), siempre que cuenten con suministro energético.',
+      color: 'border-white/20'
+    }
+  ];
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const runesLore = [
