@@ -135,7 +135,7 @@ export default function App() {
                 Bienvenido a <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-purple-300 via-purple-500 to-indigo-600' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
               </h1>
               <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                La joya colosal de Abyloria se ahoga en una lluvia eterna y engranajes industriales. En sus cañones urbanos, las runas de estabilización titilan en la penumbra. Prepárate para descubrir la verdad que yace bajo el asfalto.
+                Sumérgete en Maltraxis, una novela de fantasía épica donde la magia y los engranajes industriales colisionan. Desde las imponentes islas celestiales hasta los oscuros cañones de Noctara, descubre por qué este autor de fantasía ha creado un universo tan brutal como fascinante. Prepárate para desvelar la verdad que yace bajo el asfalto.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href="#libros" className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-purple-600 hover:bg-purple-500 text-white shadow-[0_0_25px_rgba(147,51,234,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
