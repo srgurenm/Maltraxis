@@ -352,7 +352,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white/10 relative shadow-2xl shrink-0">
               <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-amber-500/20 mix-blend-overlay"></div>
-              <img src="./public/yo.jpg" alt="Jose C. Sierra" className="w-full h-full object-cover" />
+              <img src="/yo.jpg" alt="Jose C. Sierra" className="w-full h-full object-cover" />
             </div>
             <div className="text-center md:text-left">
               <span className="text-xs uppercase tracking-widest text-purple-400 font-bold">El Creador</span>
