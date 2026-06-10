@@ -224,8 +224,8 @@ export default function App() {
             <div className="relative mx-auto w-full max-w-md lg:max-w-lg aspect-[2/3] group">
               <div className={`absolute inset-0 rounded-2xl transform rotate-3 scale-105 opacity-65 duration-1000 transition-all blur-xl ${resonance === 'umbrío' ? 'bg-gradient-to-tr from-purple-600/30 to-indigo-500/25' : 'bg-gradient-to-tr from-amber-600/30 to-yellow-500/25'}`}></div>
               <img
-                src={`${import.meta.env.BASE_URL}portada.jpg`}
-                alt="Portada Temporal"
+                src={resonance === 'luminoso' ? `${import.meta.env.BASE_URL}portada2.png` : `${import.meta.env.BASE_URL}portada.jpg`}
+                alt="Portada"
                 className="relative z-10 w-full h-full object-cover rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-500 group-hover:-translate-y-2"
               />
             </div>
@@ -457,7 +457,7 @@ export default function App() {
               <img src="/yo.jpg" alt="Jose C. Sierra" className="w-full h-full object-cover" />
             </div>
             <div className="text-center md:text-left">
-              <span className="text-xs uppercase tracking-widest text-red-700 font-bold">El Creador</span>
+              <span className="text-xs uppercase tracking-widest text-red-700 font-bold">El Autor</span>
               <h2 className="text-4xl font-serif font-bold text-white mt-1 mb-4">Jose C. Sierra</h2>
               <p className="text-slate-300 leading-relaxed mb-6">
                 Jose C. Sierra es un apasionado escritor de fantasía. Inspirado por la mitología clásica, la tecnología retrofuturista y la narrativa noir, ha construido el universo de Maltraxis como un reflejo de las luchas internas del ser humano bajo la opresión de sistemas implacables.
