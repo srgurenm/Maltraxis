@@ -1,6 +1,6 @@
-<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#991b1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Cross/Bar -->
-  <path d="M12 2v20M6 7h12v6H6z" />
-  <!-- Wing/Star shapes -->
-  <path d="M12 2l-6 5 2 7-4 3 4 5h12l4-5-4-3 2-7-6-5z" />
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#991b1b" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter">
+  <!-- Cross with double bars -->
+  <path d="M12 2v20M8 5h8M8 10h8" />
+  <!-- Star/Wing shapes with straight lines -->
+  <path d="M12 7l-5 6 3 4-3 5h10l-3-5 3-4-5-6z" />
 </svg>
