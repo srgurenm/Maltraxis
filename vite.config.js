@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Base path for GitHub Pages deployment. 
-  // Replace 'LpageM' with your exact GitHub repository name if it differs.
+  // ¡IMPORTANTE! No cambiar esta base a '/Maltraxis/'.
+  // Al usar un dominio personalizado (Maltraxis.shop), 
+  // la ruta base DEBE ser './' para que el sitio cargue correctamente desde la raíz.
   base: './',
 })
