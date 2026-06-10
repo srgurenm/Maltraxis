@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Book, ChevronRight, Menu, X, BookOpen, Feather, Sparkles, User, Mail, Star, Flame, Droplet, Eye } from 'lucide-react';
 
+const SigilIcon = ({ className }) => (
+  <img src={`${import.meta.env.BASE_URL}sigil.svg`} alt="Sigil" className={className} />
+);
+
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [resonance, setResonance] = useState('umbrío');
@@ -140,7 +144,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-2">
-              <Sparkles className={`w-6 h-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-red-700' : 'text-red-900'}`} />
+              <SigilIcon className={`w-8 h-8 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-red-700' : 'text-red-900'}`} />
               <span className={`text-2xl font-serif font-bold ${resonance === 'umbrío' ? 'text-white' : 'text-slate-900'} tracking-wider uppercase`}>MALTRAXIS</span>
             </div>
 
@@ -200,7 +204,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-red-500 text-sm font-medium mb-6">
-                <Star className="w-4 h-4 text-red-700" /> Nueve luces para nueve sombras
+                <SigilIcon className="w-4 h-4 text-red-700" /> Nueve luces para nueve sombras
               </div>
               <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-wide">
                 Bienvenido a <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
