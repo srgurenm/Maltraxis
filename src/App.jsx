@@ -245,6 +245,7 @@ export default function App() {
           loop
           muted
           playsInline
+          webkit-playsinline="true"
           className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
         >
           <source src={`${import.meta.env.BASE_URL}Mvideoh.mp4`} type="video/mp4" />
@@ -346,6 +347,7 @@ export default function App() {
           loop
           muted
           playsInline
+          webkit-playsinline="true"
           className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
         >
           <source src={`${import.meta.env.BASE_URL}mvideo.mp4`} type="video/mp4" />
