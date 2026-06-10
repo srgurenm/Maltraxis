@@ -328,13 +328,13 @@ export default function App() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
         >
           <source src={`${import.meta.env.BASE_URL}mvideo.mp4`} type="video/mp4" />
         </video>
         
-        {/* Capa de oscurecimiento */}
-        <div className="absolute inset-0 bg-black/60 z-0"></div>
+        {/* Capa de oscurecimiento ajustada para mejor visibilidad del video */}
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
