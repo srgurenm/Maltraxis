@@ -234,7 +234,21 @@ export default function App() {
       </section>
 
       {/* SYNOPSIS */}
-      <section id="sinopsis" className="py-20 bg-black/90 border-y border-white/5 relative">
+      <section id="sinopsis" className="py-20 border-y border-white/5 relative overflow-hidden">
+        {/* Video de fondo */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
+        >
+          <source src={`${import.meta.env.BASE_URL}Mvideoh.mp4`} type="video/mp4" />
+        </video>
+
+        {/* Capa de oscurecimiento ajustada */}
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Feather className={`w-12 h-12 mx-auto mb-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-red-700' : 'text-amber-500'}`} />
           <h2 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-8 tracking-wider">La Ciudad de las Sombras</h2>
