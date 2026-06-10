@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Book, ChevronRight, Menu, X, BookOpen, Feather, Sparkles, User, Mail, Star, Flame, Droplet, Eye } from 'lucide-react';
 
 const SigilIcon = ({ className }) => (
-  <img src={`${import.meta.env.BASE_URL}sigil.svg`} alt="Sigil" className={className} />
+  <img src={`${import.meta.env.BASE_URL}sigil.svg`} alt="Sigil" className={`${className} filter brightness-150`} />
 );
 
 export default function App() {
