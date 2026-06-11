@@ -10,6 +10,13 @@ export default function App() {
   const [resonance, setResonance] = useState('umbrío');
   const [activeRune, setActiveRune] = useState(null);
 
+  // Fuerza la inicialización del script de MailerLite cuando el componente App se monta
+  useEffect(() => {
+    if (window.ml) {
+      window.ml('account', '2426215');
+    }
+  }, []);
+
   const [selectedMagic, setSelectedMagic] = useState(null);
   const [selectedLore, setSelectedLore] = useState(false);
   const [selectedGallery, setSelectedGallery] = useState(false);
@@ -496,7 +503,11 @@ export default function App() {
         <h3 className="text-2xl font-serif text-white mb-4">¿Quieres saber qué ocurre después?</h3>
         <p className="text-slate-400 mb-6">Suscríbete y recibe los primeros capítulos gratis.</p>
         <div className="max-w-md mx-auto px-4">
-          <div className="ml-embedded" data-form="olRIIV"></div>
+          <div 
+            className="ml-embedded" 
+            data-form="olRIIV"
+            key="mailerlite-form"
+          ></div>
         </div>
       </section>
 
