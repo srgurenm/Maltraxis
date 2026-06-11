@@ -248,7 +248,7 @@ export default function App() {
           webkit-playsinline="true"
           className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
         >
-          <source src={`${import.meta.env.BASE_URL}Mvideoh.mp4`} type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}mvideo.mp4`} type="video/mp4" />
         </video>
 
         {/* Capa de oscurecimiento ajustada */}
@@ -341,21 +341,6 @@ export default function App() {
 
       {/* MAGIC SYSTEM */}
       <section id="magia" className="py-24 relative bg-black/80 border-t border-white/5 overflow-hidden">
-        {/* Video de fondo */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          webkit-playsinline="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
-        >
-          <source src={`${import.meta.env.BASE_URL}mvideo.mp4`} type="video/mp4" />
-        </video>
-        
-        {/* Capa de oscurecimiento ajustada para mejor visibilidad del video */}
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
-
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">El Ecosistema Mágico de Noctara</h2>
