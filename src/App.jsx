@@ -10,18 +10,6 @@ export default function App() {
   const [resonance, setResonance] = useState('umbrío');
   const [activeRune, setActiveRune] = useState(null);
 
-  // Fuerza la inicialización del script de MailerLite cuando el componente App se monta
-  useEffect(() => {
-    if (window.ml) {
-      window.ml('account', '2426215');
-      // Intenta forzar la carga del formulario si el script ya está presente
-      const mlScript = document.createElement('script');
-      mlScript.src = 'https://assets.mailerlite.com/js/universal.js';
-      mlScript.async = true;
-      document.body.appendChild(mlScript);
-    }
-  }, []);
-
   const [selectedMagic, setSelectedMagic] = useState(null);
   const [selectedLore, setSelectedLore] = useState(false);
   const [selectedGallery, setSelectedGallery] = useState(false);
