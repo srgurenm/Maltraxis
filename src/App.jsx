@@ -491,6 +491,15 @@ export default function App() {
         </div>
       </section>
 
+      {/* NEW SUBSCRIPTION SECTION */}
+      <section className="py-16 bg-red-950/20 border-t border-white/5 text-center">
+        <h3 className="text-2xl font-serif text-white mb-4">¿Quieres saber qué ocurre después?</h3>
+        <p className="text-slate-400 mb-6">Suscríbete y recibe los primeros capítulos gratis.</p>
+        <div className="max-w-md mx-auto px-4">
+          <div className="ml-embedded" data-form="olRIIV"></div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="bg-black py-12 border-t border-white/5 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
