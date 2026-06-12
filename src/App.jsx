@@ -228,6 +228,31 @@ Mientras ambos se alejaban por caminos opuestos en los laberínticos pasillos de
     </div>
   );
 
+  const TestimonialsSection = () => (
+    <section className="py-20 bg-black text-white text-center border-t border-white/5">
+      <h2 className="text-3xl font-serif font-bold mb-12">Lo que dicen los lectores</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
+        {[
+          { quote: "Una atmósfera gótica insuperable. Noctara cobra vida.", author: "Elena R." },
+          { quote: "Gur es un detective con el que empatizas desde la primera página.", author: "Marcos T." },
+          { quote: "No podía soltar el libro. El sistema de magia es fascinante.", author: "Lucía M." },
+        ].map((testimony, i) => (
+          <div key={i} className="bg-white/5 p-6 rounded-2xl">
+            <Star className="w-6 h-6 text-yellow-500 mx-auto mb-4" />
+            <p className="italic mb-4">"{testimony.quote}"</p>
+            <p className="font-bold text-red-500">{testimony.author}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+
+  const StickyCTA = () => (
+    <div className="fixed bottom-0 left-0 w-full bg-red-900 text-white p-4 text-center z-50 md:hidden">
+      <a href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6" target="_blank" rel="noopener noreferrer" className="font-bold text-lg">Comprar en Amazon</a>
+    </div>
+  );
+
   const galleryImages = [
     { src: '/Paladin.png', alt: 'Paladín' },
     { src: '/Dualidad.png', alt: 'Dualidad' },
@@ -420,14 +445,12 @@ Mientras ambos se alejaban por caminos opuestos en los laberínticos pasillos de
                 <SigilIcon className="w-4 h-4 text-red-700" /> Nueve luces para nueve sombras
               </div>
               <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-wide">
-                Bienvenido a <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
+                Maltraxis: <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>La Ciudad de las Sombras</span>
               </h1>
-              <p className="text-xl text-slate-300 mb-8 font-serif italic">"Donde la lluvia nunca cesa, el poder se paga con el alma y el regreso de la Luz es el inicio del fin"</p>
+              <p className="text-xl text-slate-300 mb-8 font-serif italic">"Una fantasía oscura inmersiva que redefine el género."</p>
               <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
-                Bajo el asfalto mojado del planeta Noctara, el destino de la humanidad se forja con runas, gemas y sangre.
-                Bienvenido a Maltraxis, una megalópolis gótico-industrial donde los rascacielos de acero y cristal arcano perforan un cielo de nubes ácidas.
-                En este mundo nacido de la fragmentación divina, la Luz no es la salvación; es una tiranía dogmática que exige sumisión absoluta.
-                Acompaña a Gur, un detective cínico con un pasado doloroso, y a Rabe, una joven que representa una paradoja viviente entre la luz y la sombra, en una huida desesperada por los Jardines del Cielo y los callejones del Desagüe.
+                Sumérgete en Noctara, una megalópolis gótico-industrial donde la magia se paga con la vida y la Luz es una tiranía.
+                Acompaña a un detective cínico y a una joven que es la paradoja viviente entre dos mundos, en una huida desesperada que cambiará el destino de millones.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href="#" onClick={() => setIsReadingOpen(true)} className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
@@ -719,6 +742,9 @@ Mientras ambos se alejaban por caminos opuestos en los laberínticos pasillos de
           ></div>
         </div>
       </section>
+
+      <TestimonialsSection />
+      <StickyCTA />
 
       {/* FOOTER */}
       <footer className="bg-black py-12 border-t border-white/5 relative z-20">
