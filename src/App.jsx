@@ -95,10 +95,10 @@ export default function App() {
 
       <Hero resonance={resonance} t={t} setShowChapters={setShowChapters} />
       <Synopsis t={t} resonance={resonance} />
-      <World t={t} />
-      <Magic t={t} magicLore={magicLore} setSelectedMagic={setSelectedMagic} />
-      <Saga t={t} />
-      <Author t={t} />
+      <World t={t} resonance={resonance} />
+      <Magic t={t} magicLore={magicLore} setSelectedMagic={setSelectedMagic} resonance={resonance} />
+      <Saga t={t} resonance={resonance} />
+      <Author t={t} resonance={resonance} />
 
       {/* MAGIC MODAL */}
       {selectedMagic && (
