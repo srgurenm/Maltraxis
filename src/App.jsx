@@ -153,13 +153,13 @@ export default function App() {
               <div className="hidden md:flex items-center gap-6">
                 <div className="flex items-baseline space-x-8">
                   <a href="#inicio" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>{t.inicio}</a>
-                  <a href="#sinopsis" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>La Historia</a>
-                  <a href="#mundo" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>El Mundo</a>
-                  <a href="#magia" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Magia</a>
-                  <button onClick={() => setSelectedLore(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Códice</button>
-                  <button onClick={() => setSelectedGallery(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Galería</button>
-                  <a href="#libros" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Saga</a>
-                  <a href="#autor" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>Autor</a>
+                  <a href="#sinopsis" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>{t.historia}</a>
+                  <a href="#mundo" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>{t.mundo}</a>
+                  <a href="#magia" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>{t.magia}</a>
+                  <button onClick={() => setSelectedLore(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>{t.codice}</button>
+                  <button onClick={() => setSelectedGallery(true)} className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>{t.galeria}</button>
+                  <a href="#libros" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>{t.saga}</a>
+                  <a href="#autor" className={`hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors ${resonance === 'umbrío' ? 'text-slate-200' : 'text-slate-900'}`}>{t.autor}</a>
                 </div>
               </div>
 
@@ -200,6 +200,14 @@ export default function App() {
             <button onClick={() => { setSelectedGallery(true); setIsMenuOpen(false); }} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Galería</button>
             <a href="#libros" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Saga</a>
             <a href="#autor" onClick={() => setIsMenuOpen(false)} className="block hover:text-purple-400 px-3 py-2 rounded-md text-base font-medium transition-colors">Autor</a>
+            <a
+                href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 rounded-lg bg-red-900 hover:bg-red-800 text-white text-base font-bold transition-all shadow-[0_0_10px_rgba(153,27,27,0.3)] mt-2"
+              >
+                {t.comprar}
+              </a>
           </div>
         )}
       </nav>
@@ -216,19 +224,16 @@ export default function App() {
                 <Star className="w-4 h-4 text-red-700" /> Nueve luces para nueve sombras
               </div>
               <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-wide">
-                Bienvenido a <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
+                {t.hero_title} <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
               </h1>
-              <p className="text-xl text-slate-300 mb-8 font-serif italic">"Donde la lluvia nunca cesa, el poder se paga con el alma y el regreso de la Luz es el inicio del fin"</p>
+              <p className="text-xl text-slate-300 mb-8 font-serif italic">{t.hero_subtitle}</p>
               <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
-                Bajo el asfalto mojado del planeta Noctara, el destino de la humanidad se forja con runas, gemas y sangre.
-                Bienvenido a Maltraxis, una megalópolis gótico-industrial donde los rascacielos de acero y cristal arcano perforan un cielo de nubes ácidas.
-                En este mundo nacido de la fragmentación divina, la Luz no es la salvación; es una tiranía dogmática que exige sumisión absoluta.
-                Acompaña a Gur, un detective cínico con un pasado doloroso, y a Rabe, una joven que representa una paradoja viviente entre la luz y la sombra, en una huida desesperada por los Jardines del Cielo y los callejones del Desagüe.
+                {t.hero_description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href="/capitulos_gratis.pdf" target="_blank" rel="noopener noreferrer" className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
                   <Book className="w-5 h-5" />
-                  Leer Ahora (Capítulos Gratis)
+                  {t.leer_ahora}
                 </a>
               </div>
             </div>
