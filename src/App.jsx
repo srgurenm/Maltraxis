@@ -150,9 +150,9 @@ export default function App() {
               <X />
             </button>
             <h3 className="text-3xl font-bold text-white mb-4 font-serif">{t.capitulos_titulo}</h3>
-            <p className="text-slate-300 leading-relaxed text-justify text-lg">
-              (Aquí se mostraría el contenido de los capítulos gratis)
-            </p>
+            <div className="w-full h-[60vh] bg-white rounded-lg overflow-hidden">
+                <iframe src="/capitulos_gratis.pdf" className="w-full h-full" title="Capítulos Gratis" />
+            </div>
           </div>
         </div>
       )}
