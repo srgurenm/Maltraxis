@@ -13,7 +13,7 @@ const World = ({ t }) => {
             >
                 <source src="/mvideo.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-black/70"></div>
+            <div className="absolute inset-0 bg-black/50"></div>
           </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
