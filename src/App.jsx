@@ -504,7 +504,9 @@ export default function App() {
       {/* FORM SECTION */}
       <section className="py-24 bg-red-950/10 border-t border-white/5">
         <div className="max-w-xl mx-auto px-4 text-center">
-            <MailerLiteForm t={t} />
+            <h2 className="text-3xl font-serif font-bold text-white mb-4">{t.form_titulo}</h2>
+            <p className="text-slate-400 mb-6">{t.form_desc}</p>
+            <MailerLiteForm />
         </div>
       </section>
 
