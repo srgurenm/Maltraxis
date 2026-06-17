@@ -31,6 +31,8 @@ export const en = {
   saga_desc: "Immerse yourself in the world of Abyloria through the novels of the saga.",
   libro_1_titulo: "The City of Shadows",
   libro_1_desc: "The introduction to the world of Noctara. Join Gur on his suicide mission to free Rabe from Anael Tower and unleash a truth that will change the fate of mortals.",
+  libro_1_precio: "From $2.99",
+  libro_1_rating: "Satisfied readers ★★★★★",
   libro_2_titulo: "The Trial of the Dawn",
   libro_2_desc: "At the gates of a war, no one is sure they want to be a soldier.",
   autor_titulo: "The Author",
@@ -42,5 +44,15 @@ export const en = {
   form_desc: "Subscribe to receive news and exclusive content.",
   form_nombre: "Name",
   form_email: "Email address",
-  form_enviar: "Send"
+  form_enviar: "Send",
+  disponible: "Available now",
+  proximamente: "Coming soon",
+  // Promo banner
+  banner_texto: "📖 Launch price — Read Book I on Amazon now!",
+  banner_cta: "See offer",
+  // Reviews
+  resenas_titulo: "What Readers Are Saying",
+  resenas_subtitulo: "Join the readers already living in Noctara",
+  // Mobile menu
+  cerrar_menu: "Close menu",
 };

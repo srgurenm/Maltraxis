@@ -31,6 +31,8 @@ export const es = {
   saga_desc: "Sumérgete en el mundo de Abyloria a través de las novelas de la saga.",
   libro_1_titulo: "La Ciudad de las Sombras",
   libro_1_desc: "La introducción al mundo de Noctara. Acompaña a Gur en su misión suicida para liberar a Rabe de la Torre Anael y desatar una verdad que cambiará el destino de los mortales.",
+  libro_1_precio: "Desde $2.99",
+  libro_1_rating: "Lectores satisfechos ★★★★★",
   libro_2_titulo: "El Juicio del Alba",
   libro_2_desc: "A las puertas de una guerra nadie está seguro de que querer ser un soldado.",
   autor_titulo: "El Autor",
@@ -42,5 +44,15 @@ export const es = {
   form_desc: "Suscríbete para recibir noticias y contenido exclusivo.",
   form_nombre: "Nombre",
   form_email: "Correo electrónico",
-  form_enviar: "Enviar"
+  form_enviar: "Enviar",
+  disponible: "Disponible ahora",
+  proximamente: "Próximamente",
+  // Banner promo
+  banner_texto: "📖 Precio de lanzamiento — ¡Lee el Libro I ahora en Amazon!",
+  banner_cta: "Ver oferta",
+  // Reseñas
+  resenas_titulo: "Lo Que Dicen los Lectores",
+  resenas_subtitulo: "Únete a los lectores que ya viven en Noctara",
+  // Menú móvil
+  cerrar_menu: "Cerrar menú",
 };

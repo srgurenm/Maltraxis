@@ -1,8 +1,11 @@
 import React from 'react';
+import useScrollReveal from '../../hooks/useScrollReveal';
 
 const World = ({ t, resonance }) => {
+  const revealRef = useScrollReveal();
+
   return (
-      <section id="mundo" className={`py-24 relative overflow-hidden ${resonance === 'luminoso' ? 'bg-white' : ''}`}>
+      <section id="mundo" ref={revealRef} className={`py-24 relative overflow-hidden reveal-hidden ${resonance === 'umbrío' ? 'bg-[#030206]' : 'bg-slate-50'}`}>
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             <video 
                 autoPlay 
@@ -56,7 +59,7 @@ const World = ({ t, resonance }) => {
 
             <div className={`group rounded-2xl overflow-hidden border transition-all shadow-xl ${resonance === 'umbrío' ? 'bg-black/40 border-white/5 hover:border-indigo-500/30' : 'bg-white/80 border-slate-200 hover:border-amber-500/30'}`}>
               <div className="aspect-[4/3] overflow-hidden relative">
-                <img src="/azhar.jpeg" alt="Azhar" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={`${import.meta.env.BASE_URL}azhar.jpeg`} alt="Azhar" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030206] via-transparent to-transparent"></div>
               </div>
               <div className="p-6">
