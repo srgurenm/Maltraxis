@@ -167,4 +167,7 @@ export default function App() {
 
       <Footer />
       <FloatingCTA t={t} />
+    </div>
+  );
+}
 
