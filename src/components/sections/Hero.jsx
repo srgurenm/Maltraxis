@@ -13,11 +13,11 @@ const Hero = ({ resonance, t, setShowChapters }) => {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-red-500 text-sm font-medium mb-6">
                 <Star className="w-4 h-4 text-red-700" /> Nueve luces para nueve sombras
               </div>
-              <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-wide">
+              <h1 className={`text-5xl lg:text-7xl font-serif font-bold leading-tight mb-6 tracking-wide ${resonance === 'umbrío' ? 'text-white' : 'text-amber-900'}`}>
                 {t.hero_title} <span className={`transition-colors duration-1000 text-transparent bg-clip-text bg-gradient-to-r ${resonance === 'umbrío' ? 'from-red-300 via-red-800 to-red-950' : 'from-amber-200 via-amber-400 to-yellow-600'}`}>Maltraxis</span>
               </h1>
-              <p className="text-xl text-slate-300 mb-8 font-serif italic">{t.hero_subtitle}</p>
-              <p className="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
+              <p className={`text-xl mb-8 font-serif italic ${resonance === 'umbrío' ? 'text-slate-300' : 'text-slate-700'}`}>{t.hero_subtitle}</p>
+              <p className={`text-lg lg:text-xl mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify ${resonance === 'umbrío' ? 'text-slate-400' : 'text-slate-600'}`}>
                 {t.hero_description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
