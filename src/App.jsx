@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Book, ChevronRight, Menu, X, BookOpen, Feather, Sparkles, User, Mail, Star, Flame, Droplet, Eye, Globe } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { translations } from './translations';
+import MailerLiteForm from './components/MailerLiteForm';
 
 export default function App() {
   const { language, toggleLanguage } = useLanguage();
@@ -15,6 +16,8 @@ export default function App() {
   const [selectedLore, setSelectedLore] = useState(false);
   const [selectedGallery, setSelectedGallery] = useState(false);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+  const [showChapters, setShowChapters] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const galleryImages = [
     { src: '/Paladin.png', alt: 'Paladín' },
@@ -24,25 +27,6 @@ export default function App() {
 
   const nextImage = () => setCurrentGalleryIndex((prev) => (prev + 1) % galleryImages.length);
   const prevImage = () => setCurrentGalleryIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-
-  const loreData = {
-    title: "EL CÓDICE DE NOCTARA",
-    content: (
-      <div className="space-y-4 text-justify">
-        <p>Bienvenido a la enciclopedia prohibida. Lo que leerás a continuación son verdades ocultas tras siglos de dogma y acero.</p>
-        <h4 className="font-bold text-red-700">1. El Origen: La Fragmentación Divina</h4>
-        <p>En los albores de la historia, la conciencia pura que los humanos llamaron "Dios" descendió sobre el planeta Noctara. Fascinada por la chispa de la vida mortal, esta entidad tomó una decisión que cambiaría el cosmos: se fragmentó. De esa ruptura nacieron dieciocho esencias fundamentales: Las Nueve Luces (Ángeles) y Las Nueve Sombras (Demonios). Aunque el mandato original era preservar el equilibrio, la paz se quebró en el Año 0 con la llamada Traición Angelical, un conflicto donde la sangre divina tiñó la tierra por primera vez y los Ángeles juraron abandonar el mundo físico, llevándose consigo la esperanza de la humanidad.</p>
-        <h4 className="font-bold text-red-700">2. Geografía de la Dualidad</h4>
-        <p>El mundo quedó dividido entre dos bastiones: <strong>Azahr</strong> (La Ciudad Bendita, un paraíso de cristal inmaculado, actualmente sellada) y <strong>Maltraxis</strong> (La Ciudad de las Sombras, una megalópolis gótico-industrial de 40 millones de almas, jungla de rascacielos y neón donde la lluvia nunca cesa).</p>
-        <h4 className="font-bold text-red-700">3. El Sistema Arcano: Leyes de Noctara</h4>
-        <p>La magia es una ciencia de intercambio equivalente. Los magos actúan como <strong>conductos biológicos</strong> para la energía telúrica del planeta. Canalizar poder sin el anclaje de gemas consume la propia vitalidad del mago. Las gemas son baterías, y las runas son la sintaxis o "código" escrito que permite automatizar efectos mágicos.</p>
-        <h4 className="font-bold text-red-700">4. Reliquias de Leyenda</h4>
-        <p>Objetos de inmenso poder: La Espada de los Juramentos, capaz de herir a lo inmortal; El Cántico de los Ángeles, una frecuencia telepática que erradica el libre albedrío; y El Filo del Vacío, una hoja experimental capaz de cortar cualquier materia.</p>
-        <h4 className="font-bold text-red-700">5. Los Jugadores en la Sombra</h4>
-        <p>Los <strong>Demonios Mayores</strong> controlan la industria y la educación mágica en Maltraxis. Los <strong>Seguidores de la Luz</strong>, humanos sin magia leales a los antiguos Ángeles, persisten en las sombras tras la caída de Azahr.</p>
-      </div>
-    )
-  };
 
   const magicLore = [
     {
@@ -231,10 +215,10 @@ export default function App() {
                 {t.hero_description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="/capitulos_gratis.pdf" target="_blank" rel="noopener noreferrer" className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
+                <button onClick={() => setShowChapters(true)} className={`inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-500 ${resonance === 'umbrío' ? 'bg-red-900 hover:bg-red-800 text-white shadow-[0_0_25px_rgba(153,27,27,0.4)]' : 'bg-amber-600 hover:bg-amber-500 text-slate-950 shadow-[0_0_25px_rgba(217,119,6,0.4)]'}`}>
                   <Book className="w-5 h-5" />
                   {t.leer_ahora}
-                </a>
+                </button>
               </div>
             </div>
 
@@ -255,23 +239,35 @@ export default function App() {
       <section id="sinopsis" className="py-20 bg-black/90 border-y border-white/5 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Feather className={`w-12 h-12 mx-auto mb-6 transition-colors duration-1000 ${resonance === 'umbrío' ? 'text-red-700' : 'text-amber-500'}`} />
-          <h2 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-8 tracking-wider">La Ciudad de las Sombras</h2>
+          <h2 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-8 tracking-wider">{t.sinopsis_titulo}</h2>
           <div className="space-y-6 text-slate-300 leading-relaxed text-justify lg:text-center text-lg">
             <p>
-              Maltraxis no es una simple ciudad de fantasía medieval; es un monstruo tecnológico-gótico de acero, cristal arcano y vapor. En sus niveles más profundos, la humanidad se desangra de deudas, consumiendo escoria de cristales mágicos en callejones húmedos bajo una lluvia constante.
+              {t.sinopsis_p1}
             </p>
             <p>
-              <strong>Gur</strong>, un ex-detective que arrastra la culpa de una muerte del pasado, debe infiltrarse en la Torre Anael para extraer a una criatura peligrosa. Al llegar a la cima descubre a <strong>Rabe</strong>, una joven confinada que desconoce su herencia híbrida de luz y oscuridad. Su escape desatará la furia de los Nueve Ángeles, decididos a purgar la inmundicia mortal e imponer una simetría blanca y silenciosa sobre Noctara.
+              {t.sinopsis_p2}
             </p>
           </div>
         </div>
       </section>
 
       {/* SCENARIO DETAILS WITH TEMPORARY IMAGES */}
-      <section id="mundo" className="py-24 relative bg-gradient-to-b from-transparent to-black/85">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="mundo" className="py-24 relative overflow-hidden">
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
+            <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                className="w-full h-full object-cover"
+            >
+                <source src="/mvideo.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black/70"></div>
+          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">El Escenario de Noctara</h2>
+            <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">{t.mundo_titulo}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -282,10 +278,10 @@ export default function App() {
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold text-white font-serif">Distrito Inferior</h3>
+                  <h3 className="text-xl font-bold text-white font-serif">{t.mundo_1_titulo}</h3>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Calles empedradas marcadas por la humedad y el goteo de aceite de las calderas de vapor. El aire pesado transporta la desesperación de la clase obrera y la presencia de demonios menores refugiados en tabernas lúgubres.
+                  {t.mundo_1_desc}
                 </p>
               </div>
             </div>
@@ -297,10 +293,10 @@ export default function App() {
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold text-white font-serif">Jardines del Cielo</h3>
+                  <h3 className="text-xl font-bold text-white font-serif">{t.mundo_2_titulo}</h3>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Los Jardines del Cielo de Maltraxis son exuberantes oasis de naturaleza artificial que se extienden entre los pisos 100 y 125 de los rascacielos colosales de la ciudad, funcionando como un segundo nivel urbano suspendido en las alturas. Estas islas celestiales están interconectadas por puentes y plataformas grabados con runas de estabilización azules que brillan suavemente.
+                  {t.mundo_2_desc}
                 </p>
               </div>
             </div>
@@ -312,10 +308,10 @@ export default function App() {
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold text-white font-serif">Las Forjas de Nixael</h3>
+                  <h3 className="text-xl font-bold text-white font-serif">{t.mundo_3_titulo}</h3>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Talleres de experimentación donde se tallan runas en engranajes masivos y se destilan gemas para bombear energía a la metrópolis. Ciencia, vacío y transmutación conviven en un peligroso balance.
+                  {t.mundo_3_desc}
                 </p>
               </div>
             </div>
@@ -327,10 +323,10 @@ export default function App() {
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold text-white font-serif">Azhar: La Ciudad de la Luz</h3>
+                  <h3 className="text-xl font-bold text-white font-serif">{t.mundo_4_titulo}</h3>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Contrapunto luminoso a Maltraxis. Azhar se erige como un faro de luz  y esperanza, donde la luz no solo ilumina, sino que dicta el orden y la justicia sobre los dominios telúricos.
+                  {t.mundo_4_desc}
                 </p>
               </div>
             </div>
@@ -342,9 +338,9 @@ export default function App() {
       <section id="magia" className="py-24 relative bg-black/80 border-t border-white/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">El Ecosistema Mágico de Noctara</h2>
+            <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">{t.magia_titulo}</h2>
             <p className="text-slate-400 max-w-3xl mx-auto text-justify">
-              Toda la magia en Noctara emana del Flujo Telúrico, la energía natural del núcleo del planeta. Haz clic en cada tipo de magia para explorar sus mecánicas y limitaciones.
+              {t.magia_desc}
             </p>
           </div>
 
@@ -359,7 +355,7 @@ export default function App() {
                 <p className="text-sm text-slate-400 leading-relaxed text-justify">
                   {item.shortDesc}
                 </p>
-                <span className="text-xs text-red-700 mt-4 inline-block font-bold">Leer más...</span>
+                <span className="text-xs text-red-700 mt-4 inline-block font-bold">{t.leer_mas}</span>
               </div>
             ))}
           </div>
@@ -412,9 +408,9 @@ export default function App() {
       <section id="libros" className="py-24 relative bg-[#060402]/90 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">La Saga Maltraxis</h2>
+            <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-widest uppercase">{t.saga_titulo}</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              Sumérgete en el mundo de Abyloria a través de las novelas de la saga.
+              {t.saga_desc}
             </p>
           </div>
 
@@ -427,9 +423,9 @@ export default function App() {
               <div className="flex-1 flex flex-col justify-between">
                 <div>
                   <span className="text-[10px] uppercase tracking-wider text-red-700 font-bold">Libro I</span>
-                  <h3 className="text-2xl font-serif font-bold text-white mt-1 mb-3">La Ciudad de las Sombras</h3>
+                  <h3 className="text-2xl font-serif font-bold text-white mt-1 mb-3">{t.libro_1_titulo}</h3>
                   <p className="text-sm text-slate-400 leading-relaxed">
-                    La introducción al mundo de Noctara. Acompaña a Gur en su misión suicida para liberar a Rabe de la Torre Anael y desatar una verdad que cambiará el destino de los mortales.
+                    {t.libro_1_desc}
                   </p>
                 </div>
                 <a
@@ -452,9 +448,9 @@ export default function App() {
               <div className="flex-1 flex flex-col justify-between">
                 <div>
                   <span className="text-[10px] uppercase tracking-wider text-amber-400 font-bold">Libro II</span>
-                  <h3 className="text-2xl font-serif font-bold text-white mt-1 mb-3">El Juicio del Alba</h3>
+                  <h3 className="text-2xl font-serif font-bold text-white mt-1 mb-3">{t.libro_2_titulo}</h3>
                   <p className="text-sm text-slate-400 leading-relaxed">
-                    A las puertas de una guerra nadie está seguro de que querer ser un soldado.
+                    {t.libro_2_desc}
                   </p>
                 </div>
                 <button className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400 hover:text-amber-300 transition-colors">
@@ -475,18 +471,40 @@ export default function App() {
               <img src="/yo.jpg" alt="Jose C. Sierra" className="w-full h-full object-cover" />
             </div>
             <div className="text-center md:text-left">
-              <span className="text-xs uppercase tracking-widest text-red-700 font-bold">El Autor</span>
+              <span className="text-xs uppercase tracking-widest text-red-700 font-bold">{t.autor_titulo}</span>
               <h2 className="text-4xl font-serif font-bold text-white mt-1 mb-4">Jose C. Sierra</h2>
               <p className="text-slate-300 leading-relaxed mb-6">
-                Jose C. Sierra es un apasionado escritor de fantasía. Inspirado por la mitología clásica, la tecnología retrofuturista y la narrativa noir, ha construido el universo de Maltraxis como un reflejo de las luchas internas del ser humano bajo la opresión de sistemas implacables.
+                {t.autor_desc}
               </p>
               <div className="flex justify-center md:justify-start gap-4">
                 <a href="mailto:jcsierrah77@gmail.com" className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
-                  <Mail className="w-4 h-4" /> Contacto
+                  <Mail className="w-4 h-4" /> {t.contacto}
                 </a>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+        {/* CAPÍTULOS MODAL */}
+      {showChapters && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setShowChapters(false)}>
+          <div className="bg-[#0c0a09] border border-white/10 p-8 rounded-2xl max-w-2xl w-full shadow-2xl relative" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setShowChapters(false)} className="absolute top-4 right-4 text-slate-400 hover:text-white">
+              <X />
+            </button>
+            <h3 className="text-3xl font-bold text-white mb-4 font-serif">{t.capitulos_titulo}</h3>
+            <p className="text-slate-300 leading-relaxed text-justify text-lg">
+              (Aquí se mostraría el contenido de los capítulos gratis)
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* FORM SECTION */}
+      <section className="py-24 bg-red-950/10 border-t border-white/5">
+        <div className="max-w-xl mx-auto px-4 text-center">
+            <MailerLiteForm t={t} />
         </div>
       </section>
 
