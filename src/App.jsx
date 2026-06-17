@@ -14,7 +14,7 @@ import Magic from './components/sections/Magic';
 import Saga from './components/sections/Saga';
 import Author from './components/sections/Author';
 import Reviews from './components/sections/Reviews';
-import { magicLore, runesLore } from './data/lore';
+import { magicLore, codexLore } from './data/lore';
 
 export default function App() {
   const { language, toggleLanguage } = useLanguage();
@@ -221,7 +221,7 @@ export default function App() {
           onClick={() => setShowCodex(false)}
         >
           <div
-            className="bg-[#0c0a09] border border-white/10 p-8 rounded-2xl max-w-2xl w-full shadow-2xl relative"
+            className="bg-[#0c0a09] border border-white/10 p-8 rounded-2xl max-w-2xl w-full shadow-2xl relative max-h-[80vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -231,12 +231,12 @@ export default function App() {
             >
               <X />
             </button>
-            <h3 className="text-3xl font-bold text-white mb-6 font-serif">{t.codice} — Runas de Noctara</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {runesLore.map((rune) => (
-                <div key={rune.id} className={`p-4 rounded-xl border ${rune.color}`}>
-                  <h4 className="font-bold mb-2 font-serif text-sm">{rune.title}</h4>
-                  <p className="text-xs leading-relaxed opacity-80">{rune.desc}</p>
+            <h3 className="text-3xl font-bold text-white mb-6 font-serif">{t.codice} — Códice Prohibido de Noctara</h3>
+            <div className="space-y-6">
+              {codexLore.map((item) => (
+                <div key={item.id} className="p-4 rounded-xl border border-white/10 bg-white/5">
+                  <h4 className="font-bold mb-2 font-serif text-lg text-amber-500">{item.title}</h4>
+                  <p className="text-sm leading-relaxed text-slate-300">{item.desc}</p>
                 </div>
               ))}
             </div>
