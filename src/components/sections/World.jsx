@@ -67,5 +67,8 @@ const World = ({ t, resonance }) => {
           </div>
         </div>
       </section>
+  );
+};
 
 export default World;
+

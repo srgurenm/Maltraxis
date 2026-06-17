@@ -59,5 +59,7 @@ const Saga = ({ t, resonance }) => {
           </div>
         </div>
       </section>
+  );
+};
 
 export default Saga;
