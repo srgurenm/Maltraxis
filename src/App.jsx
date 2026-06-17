@@ -226,8 +226,8 @@ export default function App() {
             <div className="relative mx-auto w-full max-w-md lg:max-w-lg aspect-[2/3] group">
               <div className={`absolute inset-0 rounded-2xl transform rotate-3 scale-105 opacity-65 duration-1000 transition-all blur-xl ${resonance === 'umbrío' ? 'bg-gradient-to-tr from-purple-600/30 to-indigo-500/25' : 'bg-gradient-to-tr from-amber-600/30 to-yellow-500/25'}`}></div>
               <img
-                src={`${import.meta.env.BASE_URL}portada.jpg`}
-                alt="Portada Temporal"
+                src={`${import.meta.env.BASE_URL}${resonance === 'luminoso' ? 'portada2.png' : 'portada.jpg'}`}
+                alt="Portada del libro"
                 className="relative z-10 w-full h-full object-cover rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-500 group-hover:-translate-y-2"
               />
             </div>
