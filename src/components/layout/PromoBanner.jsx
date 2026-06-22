@@ -5,7 +5,7 @@ const PromoBanner = ({ t, visible, onClose }) => {
   if (!visible) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-red-950 via-red-900 to-red-950 border-b border-red-800/60 shadow-lg">
+    <div className="hidden md:flex fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-red-950 via-red-900 to-red-950 border-b border-red-800/60 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
         <div className="flex-1 flex items-center justify-center gap-3 flex-wrap">
           <p className="text-sm text-red-100 font-medium text-center">
