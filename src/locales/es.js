@@ -9,7 +9,7 @@ export const es = {
   autor: "Autor",
   comprar: "Comprar en Amazon",
   hero_star: "Nueve luces para nueve sombras",
-  hero_title: "Bienvenido a",
+  hero_title: "La Ciudad de las Sombras:",
   hero_subtitle: "\"Donde la lluvia nunca cesa, el poder se paga con el alma y el regreso de la Luz es el inicio del fin\"",
   hero_desc: "Bajo el asfalto mojado del planeta Noctara, el destino de la humanidad se forja con runas, gemas y sangre. Bienvenido a Maltraxis, una megalópolis gótico-industrial donde los rascacielos de acero y cristal arcano perforan un cielo de nubes ácidas.",
   leer_ahora: "Leer Ahora (Capítulos Gratis)",
