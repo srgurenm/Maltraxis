@@ -55,4 +55,33 @@ export const en = {
   resenas_subtitulo: "Join the readers already living in Noctara",
   // Mobile menu
   cerrar_menu: "Close menu",
+  // Why Read
+  why_title: "Why dive into the shadows of Maltraxis?",
+  why_1_title: "1. A Magic System with Unbreakable Rules (Hard Magic)",
+  why_1_desc: "If you're a fan of authors like Brandon Sanderson, you'll appreciate a world where magic isn't a narrative \"wildcard,\" but a science of equivalent exchange. In Noctara, the mage is a biological conduit; channeling energy without the anchor of runic gems consumes your own vitality, and dark magic devours your emotions before corroding reality itself. Here, power is a dangerous tool and every spell has a real physical cost.",
+  why_2_title: "2. A Unique and Oppressive \"Magipunk\" Setting",
+  why_2_desc: "Forget conventional medieval fantasy. Maltraxis is a techno-gothic monster of steel, steam, and arcane glass, a megalopolis of 40 million souls where 150-story skyscrapers pierce acidic clouds. From the luxurious Sky Gardens to the industrial sludge of the lower districts, you'll live an immersive experience with a Noir/Dieselpunk aesthetic reminiscent of the atmosphere of Arcane or Blade Runner.",
+  why_3_title: "3. The Light Trope, Subverted",
+  why_3_desc: "Perfect for readers of Joe Abercrombie looking for moral ambiguity. In this saga, angels are not saviors, but fanatical entities seeking to impose a white, absolute \"peace\" through purifying judgment, while the city's shadows are the last refuge of human freedom. It's a struggle for survival where heroes are broken beings trying not to become what they hunt.",
+  why_4_title: "4. A Detective Plot of Cosmic Scale",
+  why_4_desc: "You will accompany Gur, a cynical detective with a fragmented past, in a mystery that begins with a debt collection assignment and ends up unraveling the Fall of Azhar, a cataclysm that broke the balance of the universe ten years ago. It is an absorbing read that combines criminal intrigue with a war between divine and demonic essences.",
+  why_summary_title: "What readers find in Maltraxis:",
+  why_summary_1_title: "Tactical Adrenaline:",
+  why_summary_1_desc: "Combats where physics and magic collide with devastating consequences.",
+  why_summary_2_title: "Characters with Soul:",
+  why_summary_2_desc: "Vulnerable protagonists who carry real traumas and tested loyalties.",
+  why_summary_3_title: "Deep World-building:",
+  why_summary_3_desc: "A millennial timeline that explains everything from the fragmentation of divine consciousness to current techno-magic.",
+  why_cta: "ACCEPT THE OATH AND START READING",
+  // FAQ
+  faq_title: "Frequently Asked Questions",
+  faq_1_q: "How do I receive the PDF?",
+  faq_1_a: "Immediately after purchasing on Gumroad, you will receive a direct download link and an email with the attached file so you always have it available.",
+  faq_2_q: "Is it compatible with my Kindle?",
+  faq_2_a: "Yes! You can send the PDF to your Kindle using Amazon's 'Send to Kindle' feature, or transfer it via cable. It's also available directly in the Kindle store.",
+  faq_3_q: "Can I read it on my tablet or mobile?",
+  faq_3_a: "Absolutely. The PDF file is optimized to be read on any device, whether using Apple Books, Google Play Books, or any PDF reader.",
+  // Urgency
+  hero_urgency: "PDF Launch Offer: 20% off for a limited time",
+  hero_cta_pdf: "Instant Download (-20%)"
 };

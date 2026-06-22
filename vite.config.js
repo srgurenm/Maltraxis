@@ -8,4 +8,14 @@ export default defineConfig({
   // Al usar un dominio personalizado (Maltraxis.shop), 
   // la ruta base DEBE ser './' para que el sitio cargue correctamente desde la raíz.
   base: './',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          icons: ['lucide-react']
+        }
+      }
+    }
+  }
 })

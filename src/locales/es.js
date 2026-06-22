@@ -55,4 +55,33 @@ export const es = {
   resenas_subtitulo: "Únete a los lectores que ya viven en Noctara",
   // Menú móvil
   cerrar_menu: "Cerrar menú",
+  // Why Read
+  why_title: "¿Por qué sumergirte en las sombras de Maltraxis?",
+  why_1_title: "1. Un Sistema de Magia con Reglas Inquebrantables (Hard Magic)",
+  why_1_desc: "Si eres fan de autores como Brandon Sanderson, apreciarás un mundo donde la magia no es un \"comodín\" narrativo, sino una ciencia de intercambio equivalente. En Noctara, el mago es un conducto biológico; canalizar energía sin el anclaje de gemas rúnicas consume tu propia vitalidad, y la magia de oscuridad devora tus emociones antes de corroer la realidad misma. Aquí, el poder es una herramienta peligrosa y cada hechizo tiene un costo físico real.",
+  why_2_title: "2. Una Ambientación \"Magipunk\" Única y Opresiva",
+  why_2_desc: "Olvida la fantasía medieval convencional. Maltraxis es un monstruo tecnológico-gótico de acero, vapor y cristal arcano, una megalópolis de 40 millones de almas donde rascacielos de 150 pisos perforan nubes ácidas. Desde los lujosos Jardines del Cielo hasta el fango industrial de los distritos inferiores, vivirás una experiencia inmersiva con una estética Noir/Dieselpunk que recuerda a la atmósfera de Arcane o Blade Runner.",
+  why_3_title: "3. El Tropo de la Luz, Subvertido",
+  why_3_desc: "Perfecto para los lectores de Joe Abercrombie que buscan ambigüedad moral. En esta saga, los ángeles no son salvadores, sino entidades fanáticas que buscan imponer una \"paz\" blanca y absoluta mediante el juicio purificador, mientras que las sombras de la ciudad son el último refugio de la libertad humana. Es una lucha por la supervivencia donde los héroes son seres rotos intentando no convertirse en lo que cazan.",
+  why_4_title: "4. Una Trama Detectivesca de Escala Cósmica",
+  why_4_desc: "Acompañarás a Gur, un detective cínico con un pasado fragmentado, en un misterio que comienza con un encargo de cobro de deudas y termina desentrañando la Caída de Azahr, un cataclismo que rompió el equilibrio del universo hace diez años. Es una lectura absorbente que combina la intriga criminal con una guerra entre esencias divinas y demoníacas.",
+  why_summary_title: "Lo que los lectores encuentran en Maltraxis:",
+  why_summary_1_title: "Adrenalina Táctica:",
+  why_summary_1_desc: "Combates donde la física y la magia colisionan con consecuencias devastadoras.",
+  why_summary_2_title: "Personajes con Alma:",
+  why_summary_2_desc: "Protagonistas vulnerables que cargan con traumas reales y lealtades puestas a prueba.",
+  why_summary_3_title: "World-building Profundo:",
+  why_summary_3_desc: "Una cronología milenaria que explica desde la fragmentación de la conciencia divina hasta la tecno-magia actual.",
+  why_cta: "ACEPTA EL JURAMENTO Y EMPIEZA A LEER",
+  // FAQ
+  faq_title: "Preguntas Frecuentes",
+  faq_1_q: "¿Cómo recibo el PDF?",
+  faq_1_a: "Inmediatamente después de la compra en Gumroad, recibirás un enlace de descarga directa y un correo con el archivo adjunto para que lo tengas siempre disponible.",
+  faq_2_q: "¿Es compatible con mi Kindle?",
+  faq_2_a: "¡Sí! Puedes enviar el PDF a tu Kindle usando la función 'Send to Kindle' de Amazon, o transferirlo por cable. También está disponible directamente en la tienda Kindle.",
+  faq_3_q: "¿Puedo leerlo en mi tablet o móvil?",
+  faq_3_a: "Absolutamente. El archivo PDF está optimizado para leerse en cualquier dispositivo, ya sea usando Apple Books, Google Play Libros o cualquier lector de PDF.",
+  // Urgency
+  hero_urgency: "Oferta de lanzamiento en PDF: 20% de descuento por tiempo limitado",
+  hero_cta_pdf: "Descarga Inmediata (-20%)"
 };

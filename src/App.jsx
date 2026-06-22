@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ChevronRight, X } from 'lucide-react';
+import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
+import { ChevronRight, X, Loader2 } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { translations } from './translations';
 import MailerLiteForm from './components/MailerLiteForm';
@@ -8,12 +8,17 @@ import FloatingCTA from './components/layout/FloatingCTA';
 import Footer from './components/layout/Footer';
 import PromoBanner from './components/layout/PromoBanner';
 import Hero from './components/sections/Hero';
-import Synopsis from './components/sections/Synopsis';
-import World from './components/sections/World';
-import Magic from './components/sections/Magic';
-import Saga from './components/sections/Saga';
-import Author from './components/sections/Author';
-import Reviews from './components/sections/Reviews';
+
+// Componentes "Below the fold" cargados de forma diferida
+const Synopsis = lazy(() => import('./components/sections/Synopsis'));
+const WhyRead = lazy(() => import('./components/sections/WhyRead'));
+const World = lazy(() => import('./components/sections/World'));
+const Magic = lazy(() => import('./components/sections/Magic'));
+const Saga = lazy(() => import('./components/sections/Saga'));
+const Author = lazy(() => import('./components/sections/Author'));
+const Reviews = lazy(() => import('./components/sections/Reviews'));
+const FAQ = lazy(() => import('./components/sections/FAQ'));
+
 import { magicLore, codexLore } from './data/lore';
 
 export default function App() {
@@ -124,12 +129,17 @@ export default function App() {
       />
 
       <Hero resonance={resonance} t={t} setShowChapters={setShowChapters} />
-      <Synopsis t={t} resonance={resonance} />
-      <World t={t} resonance={resonance} />
-      <Magic t={t} magicLore={magicLore} setSelectedMagic={setSelectedMagic} resonance={resonance} />
-      <Saga t={t} resonance={resonance} />
-      <Author t={t} resonance={resonance} />
-      <Reviews t={t} resonance={resonance} />
+      
+      <Suspense fallback={<div className="flex justify-center py-20"><Loader2 className="w-8 h-8 animate-spin text-red-900" /></div>}>
+        <Synopsis t={t} resonance={resonance} />
+        <WhyRead t={t} resonance={resonance} />
+        <World t={t} resonance={resonance} />
+        <Magic t={t} magicLore={magicLore} setSelectedMagic={setSelectedMagic} resonance={resonance} />
+        <Saga t={t} resonance={resonance} />
+        <Author t={t} resonance={resonance} />
+        <Reviews t={t} resonance={resonance} />
+        <FAQ t={t} resonance={resonance} />
+      </Suspense>
 
       {/* FORM SECTION */}
       <section className="py-24 bg-red-950/10 border-t border-white/5">

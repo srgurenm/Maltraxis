@@ -38,6 +38,19 @@ const Hero = ({ resonance, t, setShowChapters }) => {
                   {t.comprar}
                 </a>
 
+                {/* Comprar PDF - CTA secundario */}
+                <a
+                  href="https://srgurem.gumroad.com/l/maltraxis"
+                  className={`gumroad-button inline-flex justify-center items-center gap-2 px-8 py-4 rounded-lg font-bold transition-all duration-300 active:scale-95 border ${
+                    resonance === 'umbrío'
+                      ? 'border-red-900/50 text-red-300 hover:bg-red-900/20'
+                      : 'border-amber-600/50 text-amber-700 hover:bg-amber-600/10'
+                  }`}
+                >
+                  <ShoppingCart className="w-5 h-5" />
+                  {t.hero_cta_pdf}
+                </a>
+
                 {/* Leer capítulos gratis — CTA secundario */}
                 <button
                   onClick={() => setShowChapters(true)}
@@ -53,9 +66,14 @@ const Hero = ({ resonance, t, setShowChapters }) => {
               </div>
 
               {/* Microcopy de credibilidad bajo los botones */}
-              <p className={`mt-4 text-xs ${resonance === 'umbrío' ? 'text-slate-600' : 'text-slate-400'}`}>
-                ✓ Disponible en Kindle &amp; Kindle Unlimited &nbsp;·&nbsp; ✓ Capítulos gratis sin registro
-              </p>
+              <div className="mt-4 flex flex-col gap-2">
+                <p className={`text-xs ${resonance === 'umbrío' ? 'text-slate-600' : 'text-slate-400'}`}>
+                  ✓ Disponible en Kindle &amp; Kindle Unlimited &nbsp;·&nbsp; ✓ Capítulos gratis sin registro
+                </p>
+                <p className={`text-sm font-bold ${resonance === 'umbrío' ? 'text-red-400' : 'text-amber-600'} animate-pulse`}>
+                  {t.hero_urgency}
+                </p>
+              </div>
             </div>
 
             {/* NOVEL COVER MOCKUP */}
@@ -70,6 +88,7 @@ const Hero = ({ resonance, t, setShowChapters }) => {
                 <img
                   src={`${import.meta.env.BASE_URL}${resonance === 'luminoso' ? 'portada2.png' : 'portada.jpg'}`}
                   alt="Portada del libro Maltraxis: La Ciudad de las Sombras"
+                  fetchpriority="high"
                   className="relative z-10 w-full h-full object-cover rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_0_70px_rgba(153,27,27,0.3)]"
                 />
               </a>
