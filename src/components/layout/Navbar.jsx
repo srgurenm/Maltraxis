@@ -76,9 +76,10 @@ const Navbar = ({
               href="https://www.amazon.com/Maltraxis-ciudad-las-sombras-Spanish-ebook/dp/B0F77932D6"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-red-900 hover:bg-red-800 text-white text-sm font-bold transition-all shadow-[0_0_10px_rgba(153,27,27,0.3)] hover:shadow-[0_0_20px_rgba(153,27,27,0.5)]"
+              className="button"
             >
-              {t.comprar}
+              <div className="blob1"></div>
+              <div className="inner">{t.comprar}</div>
             </a>
 
             <button
@@ -165,9 +166,10 @@ const Navbar = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-red-900 hover:bg-red-800 text-white font-bold text-sm transition-all"
+                className="button"
               >
-                {t.comprar}
+                <div className="blob1"></div>
+                <div className="inner">{t.comprar}</div>
               </a>
             </div>
           </div>
